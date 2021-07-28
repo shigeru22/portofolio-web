@@ -53,6 +53,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #c8d8d1;
 }
 </style>
