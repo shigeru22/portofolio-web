@@ -1,14 +1,17 @@
 <template>
   <Navbar v-bind:links="pages" />
-  <router-view class="mt-8 flex box-border justify-center" />
+  <router-view class="mt-8 absolute flex box-border justify-center" />
+  <Footer v-bind="links" />
 </template>
 
 <script lang="ts">
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Footer
   },
   data: () => {
     return {
@@ -17,8 +20,10 @@ export default {
         { name: "Portofolio", link: "/portofolio" },
         { name: "About", link: "/about" }
       ],
-      github: "https://github.com/shigeru22",
-      pfp: "#"
+      links: {
+        github: "https://github.com/shigeru22",
+        pfp: "https://safebooru.org/index.php?page=post&s=view&id=1612415"
+      }
     }
   }
 }
