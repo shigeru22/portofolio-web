@@ -1,6 +1,6 @@
 <template>
-  <div class="mt-8 flex justify-center font-sans">
-    <router-link class="pl-6 pr-6 pt-4 pb-4 border-b-2 border-green-400" v-for="link in links" :key="link.link" :to="link.link" active-class="border-green-600">{{ link.name }}</router-link>
+  <div class="mt-4 flex justify-center font-sans">
+    <router-link class="p-4 pl-6 pr-6 border-b-2 border-green-400 hover:border-green-300" v-for="link in links" :key="link.link" :to="link.link" active-class="border-green-600">{{ link.name }}</router-link>
   </div>
 </template>
 
