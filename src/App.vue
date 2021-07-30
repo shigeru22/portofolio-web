@@ -1,7 +1,11 @@
 <template>
-  <Navbar v-bind:links="pages" />
-  <router-view class="mt-8 absolute flex box-border justify-center" />
-  <Footer v-bind="links" />
+  <div class="flex flex-col h-screen bg-color">
+    <Navbar v-bind:links="pages" class="flex" />
+    <div class="flex flex-1 overflow-auto container mx-auto pt-4 pb-4 justify-center">
+      <router-view />
+    </div>
+    <Footer v-bind="links" class="flex" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -29,8 +33,8 @@ export default {
 }
 </script>
 
-<style>
-  body {
-    background-color: #def9dc;
-  }
+<style scoped>
+body, .bg-color {
+  background-color: #def9dc;
+}
 </style>

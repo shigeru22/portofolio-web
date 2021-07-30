@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute bottom-0 p-8 pl-12 pr-12 w-full flex justify-between">
+  <footer class="w-screen flex justify-between p-8 pl-12 pr-12">
     <p class="inline font-medium text-blue-900">Profile picture by <a :href="pfp" class="text-green-800 hover:text-green-600">peko <ExternalLinkIcon class="inline h-4 w-4" /></a>.</p>
     <div class="inline">
       <a :href="github" class="text-green-600 hover:text-green-400">
@@ -9,7 +9,7 @@
         </svg>
       </a>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script lang="ts">

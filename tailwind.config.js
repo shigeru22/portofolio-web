@@ -8,7 +8,8 @@ module.exports = {
       'sans': ['Montserrat', 'sans-serif']
     },
     fontSize: {
-      base: ['24px', '24px']
+      base: ['24px', '28px'],
+      xl: ['36px', '42px']
     }
   },
   variants: {
