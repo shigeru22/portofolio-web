@@ -1,5 +1,5 @@
 <template>
-  <a v-bind:href="link" class="w-72 h-auto border-4 rounded-xl p-4 border-green-600 bg-white">
+  <a v-bind:href="link" class="transition duration-300 w-72 h-auto border-4 rounded-xl p-4 border-green-600 bg-white transform hover:scale-105">
     <div class="flex h-full gap-2">
       <img :src="require(`@/assets/portofolio/${img}`)" class="h-16 mr-2 my-auto" />
       <div class="leading-4 my-auto">

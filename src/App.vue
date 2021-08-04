@@ -25,6 +25,8 @@ export default {
         { name: "About", link: "/about" }
       ],
       links: {
+        twitter: "https://twitter.com/shigeru_22",
+        linkedin: "https://www.linkedin.com/in/jeremy-yonathan/",
         github: "https://github.com/shigeru22",
         pfp: "https://safebooru.org/index.php?page=post&s=view&id=1612415"
       }
