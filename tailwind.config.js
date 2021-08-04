@@ -21,7 +21,8 @@ module.exports = {
       cardhead: ['20px', '20px'],
       carddesc: ['16px', '16px'],
       base: ['24px', '28px'],
-      xl: ['36px', '42px']
+      xl: ['36px', '42px'],
+      sm: ['16px', '20px']
     }
   },
   variants: {

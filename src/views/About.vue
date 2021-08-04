@@ -1,9 +1,9 @@
 <template>
-  <div class="about my-auto">
-    <div class="inline-flex rounded-lg h-192 w-192 m-4 align-middle">
-      <img src="@/assets/profpic.jpg" class="border-4 rounded-3xl border-green-600" />
+  <div class="about md:flex my-auto mx-auto">
+    <div class="mx-auto md:inline-flex rounded-lg h-192 w-192 md:m-4 md:my-auto">
+      <img src="@/assets/profpic.jpg" class="border-4 rounded-3xl border-green-600 md:my-auto" />
     </div>
-    <div class="inline-flex border-4 rounded-3xl p-4 w-144 border-green-600 m-4 box-border align-middle">
+    <div class="md:inline-flex border-4 rounded-3xl p-4 w-72 sm:w-144 md:w-96 lg:w-144 border-green-600 m-4 mx-auto box-border align-middle">
       <p class="leading-normal">
         Just a guy of nothing. Really.<br /><br />
         I'm Jeremy Yonathan, mostly known as my usual nickname Shigeru. Currently majoring in Informatics
