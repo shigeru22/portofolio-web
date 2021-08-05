@@ -1,6 +1,6 @@
 <template>
   <div class="portofolio my-auto">
-    <div class="grid grid-cols-1 grid-rows-8 sm:grid-cols-2 sm:grid-rows-4 lg:grid-cols-3 lg:grid-rows-3 gap-4">
+    <div class="grid grid-cols-1 grid-rows-8 sm:grid-cols-2 sm:grid-rows-4 lg:grid-cols-3 lg:grid-rows-3 gap-2">
       <PortofolioCard v-bind="latus" />
       <PortofolioCard v-bind="uschool" />
       <PortofolioCard v-bind="duardrincc" />
@@ -30,7 +30,11 @@ export default {
         tags: [
           'PHP',
           'Bootstrap'
-        ]
+        ],
+        coloring: '#3e3662',
+        subcoloring: '#63569d',
+        // maincoloring: '#a89dd5',
+        tagcoloring: '#9c8ccc'
       },
       uschool: {
         name: 'U-School',
@@ -40,7 +44,11 @@ export default {
         tags: [
           'PHP',
           'Bootstrap'
-        ]
+        ],
+        coloring: '#7f6451',
+        subcoloring: '#b28b71',
+        // maincoloring: '#ffebde',
+        tagcoloring: '#e5b392'
       },
       duardrincc: {
         name: 'DuarDrincc',
@@ -50,7 +58,11 @@ export default {
         tags: [
           'Unity',
           'C#'
-        ]
+        ],
+        coloring: '#135102',
+        subcoloring: '#387e40',
+        // maincoloring: '#5dd26a',
+        tagcoloring: '#45cf1d'
       },
       knoledge: {
         name: 'Knoledge',
@@ -60,7 +72,11 @@ export default {
         tags: [
           'PHP',
           'CI3'
-        ]
+        ],
+        coloring: '#5b3716',
+        subcoloring: '#895320',
+        // maincoloring: '#ccae92',
+        tagcoloring: '#ad7d50'
       },
       matematirun: {
         name: 'MateMatirun',
@@ -70,7 +86,11 @@ export default {
         tags: [
           'Unity',
           'C#'
-        ]
+        ],
+        coloring: '#1a3753',
+        subcoloring: '#28527c',
+        // maincoloring: '#809db9',
+        tagcoloring: '#567ca1'
       },
       routine: {
         name: 'Routine',
@@ -80,7 +100,11 @@ export default {
         tags: [
           'Android',
           'Java'
-        ]
+        ],
+        coloring: '#7e944c',
+        subcoloring: '#90aa56',
+        // maincoloring: '#e9f2d3',
+        tagcoloring: '#a2bf61'
       },
       worldroller: {
         name: 'World Roller',
@@ -90,7 +114,11 @@ export default {
         tags: [
           'Unity',
           'C#'
-        ]
+        ],
+        // coloring: '#17384b',
+        // subcoloring: '#265e7d',
+        // maincoloring: '#44a9e0',
+        tagcoloring: '#2e7195'
       },
       opencardmaker: {
         name: 'OpenCardMaker',
@@ -100,7 +128,11 @@ export default {
         tags: [
           'WPF',
           'C#'
-        ]
+        ],
+        coloring: '#7e0808',
+        subcoloring: '#b00b0b',
+        // maincoloring: '#fe9f9f',
+        tagcoloring: '#fc2727'
       }
     }
   }

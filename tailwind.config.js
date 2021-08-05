@@ -4,25 +4,23 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        192: '192px',
-        144: '36rem'
+        144: '36rem',
+        160: '42rem'
       },
       color: {
         bg: {
           DEFAULT: '#fafffc'
         }
+      },
+      fontSize: {
+        cardhead: ['20px', '20px'],
+        carddesc: ['16px', '16px'],
+        base: ['24px', '28px']
       }
     },
     fontFamily: {
       'heading': ['NTR', 'sans'],
       'sans': ['Montserrat', 'sans-serif']
-    },
-    fontSize: {
-      cardhead: ['20px', '20px'],
-      carddesc: ['16px', '16px'],
-      base: ['24px', '28px'],
-      xl: ['36px', '42px'],
-      sm: ['16px', '20px']
     }
   },
   variants: {

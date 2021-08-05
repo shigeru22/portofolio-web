@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col h-screen bg-color">
+  <div class="flex flex-col h-screen bg-green-50">
     <Navbar v-bind:links="pages" class="flex" />
-    <div class="flex flex-1 overflow-auto container mx-auto pt-4 pb-4 justify-center">
+    <div class="flex flex-1 overflow-auto container mx-auto justify-center">
       <router-view />
     </div>
     <Footer v-bind="links" class="flex" />
@@ -34,9 +34,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-body, .bg-color {
-  background-color: #fafffc;
-}
-</style>
