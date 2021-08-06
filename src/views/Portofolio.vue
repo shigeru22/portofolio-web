@@ -1,5 +1,5 @@
 <template>
-  <div class="portofolio my-auto">
+  <div class="portofolio my-auto pt-2 pb-2">
     <div class="grid grid-cols-1 grid-rows-8 sm:grid-cols-2 sm:grid-rows-4 lg:grid-cols-3 lg:grid-rows-3 gap-2">
       <PortofolioCard v-bind="latus" />
       <PortofolioCard v-bind="uschool" />
