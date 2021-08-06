@@ -115,8 +115,8 @@ export default {
           'Unity',
           'C#'
         ],
-        // coloring: '#17384b',
-        // subcoloring: '#265e7d',
+        coloring: '#265e7d',
+        subcoloring: '#3584ae',
         // maincoloring: '#44a9e0',
         tagcoloring: '#2e7195'
       },
