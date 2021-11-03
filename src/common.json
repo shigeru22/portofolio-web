@@ -5,16 +5,16 @@
   },
   "navbar": {
     "links": [
-      { "name": "Home", "faIcon": "home", "href": "/" },
-      { "name": "Portofolio", "faIcon": "table", "href": "/portofolio" },
-      { "name": "About", "faIcon": "id-card", "href": "/about" }
+      { "name": "Home", "faType": "fas", "faIcon": "home", "href": "/" },
+      { "name": "Portofolio", "faType": "fas", "faIcon": "table", "href": "/portofolio" },
+      { "name": "About", "faType": "fas", "faIcon": "id-card", "href": "/about" }
     ]
   },
   "footer": {
     "links": [
-      { "name": "Twitter", "faIcon": "twitter", "href": "https://twitter.com/shigeru_22" },
-      { "name": "LinkedIn", "faIcon": "linkedin", "href": "https://www.linkedin.com/in/jeremy-yonathan" },
-      { "name": "GitHub", "faIcon": "github", "href": "https://github.com/shigeru22" }
+      { "name": "Twitter", "faType": "fab", "faIcon": "twitter", "href": "https://twitter.com/shigeru_22" },
+      { "name": "LinkedIn", "faType": "fab", "faIcon": "linkedin", "href": "https://www.linkedin.com/in/jeremy-yonathan" },
+      { "name": "GitHub", "faType": "fab", "faIcon": "github", "href": "https://github.com/shigeru22" }
     ]
   }
 }

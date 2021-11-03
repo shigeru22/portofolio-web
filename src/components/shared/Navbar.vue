@@ -6,7 +6,7 @@
 	</div>
 	<div class="flex space-x-10">
 		<router-link v-for="link in links" :key="link.name" :to="link.href" class="router-inactive" active-class="router-active">
-			<font-awesome-icon :icon="[ 'fas', link.faIcon ]" class="m-auto" />
+			<font-awesome-icon :icon="[ link.faType, link.faIcon ]" class="m-auto" />
 		</router-link>
 	</div>
 </div>
