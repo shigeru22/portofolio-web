@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <Motion :value="offset" tag="img">
+      <img v-motion :initial="{ scale: 0 }" :enter="{ scale: 1, transition: { duration: 500 } }" alt="Vue logo" src="../assets/logo.png" class="mx-auto">
+    </Motion>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
 </template>
@@ -12,7 +14,7 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
+    HelloWorld
   },
 });
 </script>
