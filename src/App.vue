@@ -1,36 +1,30 @@
 <template>
-  <div class="flex flex-col h-screen bg-green-50">
-    <Navbar v-bind:links="pages" class="flex" />
-    <div class="flex flex-1 overflow-auto container mx-auto justify-center">
-      <router-view />
-    </div>
-    <Footer v-bind="links" class="flex" />
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
   </div>
+  <router-view/>
 </template>
 
-<script lang="ts">
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
-
-export default {
-  components: {
-    Navbar,
-    Footer
-  },
-  data: () => {
-    return {
-      pages: [
-        { name: "Home", link: "/" },
-        { name: "Portofolio", link: "/portofolio" },
-        { name: "About", link: "/about" }
-      ],
-      links: {
-        twitter: "https://twitter.com/shigeru_22",
-        linkedin: "https://www.linkedin.com/in/jeremy-yonathan/",
-        github: "https://github.com/shigeru22",
-        pfp: "https://safebooru.org/index.php?page=post&s=view&id=1612415"
-      }
-    }
-  }
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
-</script>
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
