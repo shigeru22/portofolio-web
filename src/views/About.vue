@@ -4,6 +4,9 @@
 		<quote-card />
 	</div>
 	<Footer class="w-full" />
+	<div class="absolute bottom-16 left-0 -z-10">
+		<img src="@/assets/shigeru.svg" :alt="Shigeru" class="w-140 h-140 opacity-10 transform rotate-12" />
+	</div>
 </div>
 </template>
 
