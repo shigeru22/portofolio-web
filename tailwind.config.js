@@ -17,11 +17,13 @@ module.exports = {
 			},
 			width: {
 				"100": "25rem",
-				"175": "43.75rem"
+				"175": "43.75rem",
+				"140": "35rem"
 			},
 			height: {
 				"105": "26.25rem",
-				"138": "34.5rem"
+				"138": "34.5rem",
+				"140": "35rem"
 			},
 			minWidth: {
 				"56": "14rem"
@@ -34,6 +36,9 @@ module.exports = {
 			},
 			maxHeight: {
 				"138": "34.5rem"
+			},
+			zIndex: {
+				"-10": "-10"
 			}
 		},
 	},
