@@ -13,23 +13,15 @@
 </template>
 
 <script lang="ts">
-interface ILinkItem {
-	name: string;
-	faIcon: string;
-	href: string;
-}
+import ILinkItem from "@/types/link-item";
+import Common from "@/common.json";
 
 export default {
 	name: "Navbar",
-	props: {
-		active: {
-			type: String,
-			required: true
-		},
-		links: {
-			type: Object as () => ILinkItem,
-			required: true
-		}
+	data: () => {
+		return {
+			links: Common.navbar.links as ILinkItem[]
+		};
 	}
 };
 </script>

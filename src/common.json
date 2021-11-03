@@ -1,0 +1,20 @@
+{
+  "img": {
+    "link": "https://safebooru.org/index.php?page=post&s=view&id=1612415",
+    "creator": "peko"
+  },
+  "navbar": {
+    "links": [
+      { "name": "Home", "faIcon": "home", "href": "/" },
+      { "name": "Portofolio", "faIcon": "table", "href": "/portofolio" },
+      { "name": "About", "faIcon": "id-card", "href": "/about" }
+    ]
+  },
+  "footer": {
+    "links": [
+      { "name": "Twitter", "faIcon": "twitter", "href": "https://twitter.com/shigeru_22" },
+      { "name": "LinkedIn", "faIcon": "linkedin", "href": "https://www.linkedin.com/in/jeremy-yonathan" },
+      { "name": "GitHub", "faIcon": "github", "href": "https://github.com/shigeru22" }
+    ]
+  }
+}
