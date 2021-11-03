@@ -14,6 +14,12 @@ module.exports = {
 					"dark": "#137547",
 					"vdark": "#054A29"
 				}
+			},
+			width: {
+				"100": "25rem"
+			},
+			height: {
+				"105": "26.25rem"
 			}
 		},
 	},
