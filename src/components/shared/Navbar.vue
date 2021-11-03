@@ -1,5 +1,5 @@
 <template>
-<div class="flex justify-between w-full px-12 h-24">
+<div class="absolute top-0 flex justify-between w-full h-24 px-12 bg-white">
 	<div class="flex place-items-center space-x-4">
 		<img src="../../assets/shigeru.svg" alt="Shigeru" class="w-10 h-10" />
 		<h1 class="text-2xl font-bold text-green-vlight hover:text-green-dark transition-colors">Shigeru's Portofolio</h1>

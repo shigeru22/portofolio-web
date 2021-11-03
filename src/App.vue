@@ -1,6 +1,6 @@
 <template>
 <navbar :active="home" :links="links" />
-<router-view />
+<router-view class="mt-24" />
 </template>
 
 <script lang="ts">
