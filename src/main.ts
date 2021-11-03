@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHome, faTable, faIdCard } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faTable, faIdCard, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { MotionPlugin } from "@vueuse/motion";
 import App from "./App.vue";
@@ -14,7 +14,8 @@ library.add(
 	faIdCard,
 	faTwitter,
 	faLinkedin,
-	faGithub
+	faGithub,
+	faQuoteRight
 );
 
 createApp(App)

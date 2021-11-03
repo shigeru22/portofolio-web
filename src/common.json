@@ -5,6 +5,10 @@
     "link": "https://safebooru.org/index.php?page=post&s=view&id=1612415",
     "creator": "peko"
   },
+  "quote": {
+    "about": "Just a guy of nothing. Really.\n\nI'm Jeremy Yonathan, mostly known as my usual nickname Shigeru. Currently majoring in Informatics at Universitas Multimedia Nusantara.\nI'm highly passionate in developing and learning about technology. Most commonly in .NET (C#) including Unity and WPF, and web applications using PHP and Node.js.\nYou may contact me using the links in the footer below. Either to say hi, or just for a random chit-chat!",
+    "subquote": "*Note that I'm actually hard at communication though. :]"
+  },
   "navbar": {
     "links": [
       { "name": "Home", "faType": "fas", "faIcon": "home", "href": "/" },
