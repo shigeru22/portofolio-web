@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.router-inactive {
+  @apply flex m-auto w-14 h-14 text-2xl text-green-vlight hover:text-green-dark transition-colors rounded-full;
+}
+
+.router-active {
+  @apply bg-green-vlight text-white hover:text-white !important;
+}

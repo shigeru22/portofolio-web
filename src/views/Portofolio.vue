@@ -1,9 +1,3 @@
-<template>
-<div class="text-center">
-	Hello, world!
-</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 

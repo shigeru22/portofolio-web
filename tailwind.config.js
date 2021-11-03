@@ -5,6 +5,15 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				"sans": ["Nunito", "sans-serif"]
+			},
+			colors: {
+				"green": {
+					"vlight": "#5BBA6F",
+					"light": "#3FA34D",
+					DEFAULT: "#2A9134",
+					"dark": "#137547",
+					"vdark": "#054A29"
+				}
 			}
 		},
 	},
