@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faHome, faTable, faIdCard, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter, faLinkedin, faGithub, faPhp, faBootstrap, faUnity, faAndroid, faVuejs } from "@fortawesome/free-brands-svg-icons";
 import { MotionPlugin } from "@vueuse/motion";
 import App from "./App.vue";
 import router from "./router";
@@ -15,7 +15,12 @@ library.add(
 	faTwitter,
 	faLinkedin,
 	faGithub,
-	faQuoteRight
+	faQuoteRight,
+	faPhp,
+	faBootstrap,
+	faUnity,
+	faAndroid,
+	faVuejs
 );
 
 createApp(App)

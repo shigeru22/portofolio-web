@@ -8,6 +8,7 @@ interface IProjectItem {
     name: string;
   }[],
   longDescription: string;
+  link: string;
   screenshots: {
     image: string;
     description: string;
