@@ -24,5 +24,95 @@
       { "name": "LinkedIn", "faType": "fab", "faIcon": "linkedin", "href": "https://www.linkedin.com/in/jeremy-yonathan" },
       { "name": "GitHub", "faType": "fab", "faIcon": "github", "href": "https://github.com/shigeru22" }
     ]
-  }
+  },
+  "projects": [
+    {
+      "name": "Latus",
+      "description": "Social media made simple.",
+      "icon": "portofolio/latus.png",
+      "color": "#63569D",
+      "technologyIcon": [
+        { "type": "fab", "name": "php" },
+        { "type": "fab", "name": "bootstrap"}
+      ],
+      "longDescription": "Social media made simple.\n\nThis project is made for Web Programming mid-term test project, written in vanilla PHP and Bootstrap.\nMostly worked in login and register backend, including login API.",
+      "screenshots": []
+    },
+    {
+      "name": "U-School",
+      "description": "Web programming mid-term test project.",
+      "icon": "portofolio/webapp.png",
+      "color": "#7F6451",
+      "technologyIcon": [
+        { "type": "fab", "name": "php" },
+        { "type": "fab", "name": "bootstrap"}
+      ],
+      "longDescription": "Simple CRUD project for admin, teachers, and students.\n\nThis project is made for Web Programming's laboratory class mid-term test project, written in vanilla PHP and Bootstrap.\nWorked in every components, backends, and views.",
+      "screenshots": []
+    },
+    {
+      "name": "DuarDrincc",
+      "description": "Software Project Management final project.",
+      "icon": "portofolio/duardrincc.png",
+      "color": "#135102",
+      "technologyIcon": [
+        { "type": "fab", "name": "unity" }
+      ],
+      "longDescription": "Software project as part of Software Project Management class' final project.\n\nCreated with Unity, this software is made with designs and requirements made per project's request.\nMainly worked in coding, with some assistance in some script and components.",
+      "screenshots": []
+    },
+    {
+      "name": "Knoledge",
+      "description": "Student CRUD for web programming final project.",
+      "icon": "portofolio/knoledge.png",
+      "color": "#945F26",
+      "technologyIcon": [
+        { "type": "fab", "name": "php" }
+      ],
+      "longDescription": "School CRUD project for admin, teachers, and students.\n\nThis project is made for Web Programming class final project, written using CodeIgniter PHP framework and Semantic UI.\nMostly worked in backends for login and notifications, and designing the database.",
+      "screenshots": []
+    },
+    {
+      "name": "MateMatirun",
+      "description": "A math learning based rhythm game.",
+      "icon": "portofolio/matematirun.png",
+      "color": "#2E5A89",
+      "technologyIcon": [
+        { "type": "fab", "name": "unity" }
+      ],
+      "longDescription": "A math learning based rhythm game.\n\nThis project is made for Game Design and Development class final project, created with Unity.\nMostly worked in mapping logic, design templating, and most backends.",
+      "screenshots": []
+    },
+    {
+      "name": "Routine",
+      "description": "Daily routine wellbeing application.",
+      "icon": "portofolio/routine.png",
+      "color": "#7E944C",
+      "technologyIcon": [
+        { "type": "fab", "name": "android" }
+      ],
+      "longDescription": "Daily routine wellbeing application.\n\nThis project is made for Mobile Programming class final project, made using Android Studio and SDK.\nMostly worked in database programming, preferences, and edit profile intent.",
+      "screenshots": []
+    },
+    {
+      "name": "World Roller",
+      "description": "Roll your way through the island!",
+      "icon": "portofolio/worldroller.png",
+      "color": "#2E7195",
+      "technologyIcon": [
+        { "type": "fab", "name": "unity" }
+      ],
+      "longDescription": "Roll your way through the island!\n\nThis project is made for Game Design and Development 2 class final project, created using Unity.\nMostly worked in design and scripting.",
+      "screenshots": []
+    },
+    {
+      "name": "OpenCardMaker",
+      "description": "ONGEKI save data editor for UnityParrot.",
+      "icon": "portofolio/opencardmaker.png",
+      "color": "#B00B0B",
+      "technologyIcon": [],
+      "longDescription": "ONGEKI save data editor for UnityParrot generated files.\n\nThis project is created with the motivation to easily read the card's data and inserting them into saved files. Developed using Windows Presentation Foundation (WPF) based on .NET Framework.",
+      "screenshots": []
+    }
+  ]
 }
