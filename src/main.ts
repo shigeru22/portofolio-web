@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHome, faTable, faIdCard, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faTable, faIdCard, faQuoteRight, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter, faLinkedin, faGithub, faPhp, faBootstrap, faUnity, faAndroid, faVuejs } from "@fortawesome/free-brands-svg-icons";
 import App from "./App.vue";
 import router from "./router";
@@ -19,7 +19,8 @@ library.add(
 	faBootstrap,
 	faUnity,
 	faAndroid,
-	faVuejs
+	faVuejs,
+	faBars
 );
 
 createApp(App)
