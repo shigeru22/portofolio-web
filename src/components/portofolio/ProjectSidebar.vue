@@ -1,6 +1,8 @@
 <template>
-<div class="flex flex-col w-100 p-8 card-full-height shadow-lg rounded-lg gap-y-2">
-	<project-item v-for="(project, index) in projects" :key="index + 1" :index="index + 1" :name="project.name" :icon="project.icon" :color="project.color" />
+<div class="flex flex-col w-100 card-full-height shadow-lg rounded-lg">
+	<div class="flex flex-col m-8 overflow-y-auto gap-y-2">
+		<project-item v-for="(project, index) in projects" :key="index + 1" :index="index + 1" :name="project.name" :icon="project.icon" :color="project.color" />
+	</div>
 </div>
 </template>
 

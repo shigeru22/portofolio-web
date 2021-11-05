@@ -11,3 +11,7 @@
 .router-active {
   @apply bg-green-vlight text-white hover:text-white !important;
 }
+
+abbr[title] {
+  @apply border-b-0 no-underline !important;
+}
