@@ -1,4 +1,14 @@
 <template>
+<transition name="fade">
+	<screenshot-modal
+		v-if="opened"
+		:img="modalImg"
+		alt="Latus"
+		@close-modal="
+			opened = false
+		"
+	/>
+</transition>
 <div class="flex flex-col w-240 p-10 card-full-height shadow-lg rounded-lg">
 	<div class="flex flex-col overflow-y-auto gap-y-10">
 		<div class="flex justify-between items-center">
@@ -20,7 +30,17 @@
 			<p class="font-semibold text-2xl whitespace-pre-wrap" :style="`color: ${ color }E3;`">{{ description }}</p>
 		</div>
 		<div class="h-64">
-			<img v-for="screenshot in screenshots" :key="screenshot.name" :src="require(`@/assets/${ screenshot.image }`)" :alt="screenshot.description" class="h-56 mx-auto rounded-lg" />
+			<img
+				v-for="screenshot in screenshots"
+				@click="
+					opened = true;
+					modalImg = screenshot.image;
+				"
+				:key="screenshot.name"
+				:src="require(`@/assets/${ screenshot.image }`)"
+				:alt="screenshot.description"
+				class="h-56 mx-auto rounded-lg"
+			/>
 		</div>
 	</div>
 </div>
@@ -30,11 +50,30 @@
 .card-full-height {
 	height: calc(100vh - theme("height.60"));
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
 
 <script lang="ts">
+import ScreenshotModal from "@/components/portofolio/ScreenshotModal.vue";
+
 export default {
+	components: { ScreenshotModal },
 	name: "ProjectDetailCard",
+	data: () => {
+		return {
+			opened: false,
+			modalImg: ""
+		};
+	},
 	props: {
 		name: {
 			type: String,
