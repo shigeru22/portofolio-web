@@ -7,6 +7,7 @@
 				:img="modalImg"
 				:alt="modalAlt"
 				:description="modalDesc"
+				:color="color"
 			/>
 		</transition>
 	</dim-background>
