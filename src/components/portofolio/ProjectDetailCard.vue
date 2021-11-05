@@ -1,13 +1,15 @@
 <template>
 <transition name="fade">
-	<screenshot-modal
-		v-if="opened"
-		:img="modalImg"
-		alt="Latus"
-		@close-modal="
-			opened = false
-		"
-	/>
+	<dim-background v-if="opened" @close-modal="opened = false">
+		<transition name="fade">
+			<screenshot-modal
+				v-if="opened"
+				:img="modalImg"
+				:alt="modalAlt"
+				:description="modalDesc"
+			/>
+		</transition>
+	</dim-background>
 </transition>
 <div class="flex flex-col w-240 p-10 card-full-height shadow-lg rounded-lg">
 	<div class="flex flex-col overflow-y-auto gap-y-10">
@@ -35,11 +37,13 @@
 				@click="
 					opened = true;
 					modalImg = screenshot.image;
+					modalAlt = screenshot.description;
+					modalDesc = screenshot.description;
 				"
 				:key="screenshot.name"
 				:src="require(`@/assets/${ screenshot.image }`)"
 				:alt="screenshot.description"
-				class="h-56 mx-auto rounded-lg"
+				class="h-56 mx-auto rounded-lg cursor-pointer"
 			/>
 		</div>
 	</div>
@@ -51,27 +55,31 @@
 	height: calc(100vh - theme("height.60"));
 }
 
-.fade-enter-active,
-.fade-leave-active {
+.fade-enter-active, .fade-leave-active {
   transition: opacity 0.25s ease;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
 </style>
 
 <script lang="ts">
+import DimBackground from "@/components/shared/DimBackground.vue";
 import ScreenshotModal from "@/components/portofolio/ScreenshotModal.vue";
 
 export default {
-	components: { ScreenshotModal },
 	name: "ProjectDetailCard",
+	components: {
+		DimBackground,
+		ScreenshotModal
+	},
 	data: () => {
 		return {
 			opened: false,
-			modalImg: ""
+			modalImg: "",
+			modalAlt: "",
+			modalDesc: ""
 		};
 	},
 	props: {

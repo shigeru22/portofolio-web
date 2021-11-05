@@ -1,6 +1,7 @@
 <template>
-<div @click.self="$emit('close-modal')" class="absolute top-0 left-0 flex justify-center items-center w-screen h-screen bg-black bg-opacity-10">
-	<img :src="require(`@/assets/${ img }`)" class="max-w-4xl" />
+<div class="flex flex-col w-240 px-8 py-12 bg-white rounded-lg shadow-lg gap-y-6">
+	<img :src="require(`@/assets/${ img }`)" class="h-120 mx-auto" />
+	<p class="text-center text-semibold text-2xl text-green-dark">{{ description }}</p>
 </div>
 </template>
 
@@ -13,6 +14,10 @@ export default {
 			required: true
 		},
 		alt: {
+			type: String,
+			default: "Screenshot"
+		},
+		description: {
 			type: String,
 			default: "Screenshot"
 		}
