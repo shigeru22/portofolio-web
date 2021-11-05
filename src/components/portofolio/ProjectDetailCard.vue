@@ -21,7 +21,7 @@
 			</div>
 			<div class="flex items-center space-x-6">
 				<font-awesome-icon v-for="item in technologies" :key="item.name" :icon="[ item.type, item.name ]" class="text-2xl text-gray-500" />
-				<a :href="link" class="mx-auto">
+				<a :href="link" target="_blank" class="mx-auto">
 					<button class="flex justify-center items-center w-48 h-12 font-bold text-2xl text-white rounded-xl space-x-4" :style="`background-color: ${ color };`">
 						<font-awesome-icon :icon="[ 'fab', 'github' ]" class="text-3xl" />
 						<span>GitHub</span>

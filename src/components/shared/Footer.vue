@@ -5,7 +5,7 @@
 		<a :href="imglink" class="text-green-light hover:text-green-dark transition-colors">{{ imgcreator }}</a>.
 	</p>
 	<div class="flex space-x-10">
-		<a v-for="link in links" :key="link.name" :href="link.href" class="flex m-auto text-3xl text-green-vlight hover:text-green-dark transition-colors rounded-full">
+		<a v-for="link in links" :key="link.name" :href="link.href" target="_blank" class="flex m-auto text-3xl text-green-vlight hover:text-green-dark transition-colors rounded-full">
 			<font-awesome-icon :icon="[ link.faType, link.faIcon ]" />
 		</a>
 	</div>
