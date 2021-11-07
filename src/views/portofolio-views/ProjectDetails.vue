@@ -18,6 +18,7 @@
 		</transition>
 	</dim-background>
 </transition>
+<!-- use mobile view when body width is 1080px? -->
 <div class="flex flex-col md:flex-row justify-center mx-8 md:mx-32 my-4 md:my-8 gap-x-16 gap-y-8 overflow-y-none">
 	<project-dropdown
 		:name="projects[$route.params.id - 1].name"

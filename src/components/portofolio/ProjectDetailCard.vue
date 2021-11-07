@@ -12,7 +12,7 @@
 		</transition>
 	</dim-background>
 </transition>
-<div class="flex flex-col w-240 p-10 card-full-height shadow-lg rounded-lg">
+<div class="flex flex-col w-full md:w-240 md:min-w-150 p-10 card-full-height shadow-lg rounded-lg">
 	<div class="flex flex-col overflow-y-auto gap-y-10">
 		<div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
 			<div class="flex items-center space-x-6">
@@ -54,8 +54,10 @@
 </template>
 
 <style scoped>
-.card-full-height {
-	height: calc(100vh - theme("height.60"));
+@media (min-width: 768px) {
+	.card-full-height {
+		height: calc(100vh - theme("height.60"));
+	}
 }
 
 .fade-enter-active, .fade-leave-active {
