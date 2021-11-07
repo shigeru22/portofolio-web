@@ -1,7 +1,7 @@
 <template>
 <navbar :title="navbar.title" :nickname="navbar.nickname" :links="navbar.links" />
 <div class="flex flex-col main-body mt-24">
-	<router-view class="flex-grow" />
+	<router-view class="flex-grow mx-12" />
 	<Footer :imgcreator="footer.imgcreator" :imglink="footer.imglink" :links="footer.links" />
 </div>
 </template>

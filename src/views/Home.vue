@@ -1,5 +1,5 @@
 <template>
-<div class="flex m-12 md:m-0 justify-center items-center">
+<div class="flex justify-center items-center">
 	<profile-card :alt="nickname" :name="name" :occupation="occupation" />
 </div>
 </template>
