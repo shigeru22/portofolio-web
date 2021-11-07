@@ -2,8 +2,8 @@
 <div class="flex flex-grow justify-center items-center">
 	<quote-card :alt="nickname" :quote="quote" :subquote="subquote" />
 </div>
-<div class="absolute bottom-16 left-0 -z-10">
-	<img src="@/assets/icon.svg" :alt="nickname" class="w-140 h-140 opacity-10 transform rotate-12" />
+<div class="fixed bottom-16 left-0 -z-10">
+	<img src="@/assets/icon.svg" :alt="nickname" class="w-screen max-w-xl opacity-10 transform rotate-12" />
 </div>
 </template>
 

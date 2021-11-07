@@ -1,5 +1,5 @@
 <template>
-<div class="flex flex-col min-w-56 max-w-175 min-h-56 max-h-138 p-12 bg-white shadow-lg rounded-lg space-y-6">
+<div class="flex flex-col min-w-56 max-w-175 min-h-56 md:max-h-138 mx-4 p-12 bg-white shadow-lg rounded-lg space-y-6">
 	<div class="flex justify-between">
 		<font-awesome-icon :icon="[ 'fas', 'quote-right' ]" class="text-6xl text-green" />
 		<img src="@/assets/profpic.jpg" :alt="alt" class="w-12 h-12 border-2 border-green-dark rounded-full" />
