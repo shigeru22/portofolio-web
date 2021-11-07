@@ -14,13 +14,15 @@
 </transition>
 <div class="flex flex-col w-240 p-10 card-full-height shadow-lg rounded-lg">
 	<div class="flex flex-col overflow-y-auto gap-y-10">
-		<div class="flex justify-between items-center">
+		<div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
 			<div class="flex items-center space-x-6">
 				<img :src="require(`@/assets/${ icon }`)" :alt="name" class="w-16 h-16" />
 				<h1 class="font-bold text-4xl" :style="`color: ${ color }EE;`">{{ name }}</h1>
 			</div>
-			<div class="flex items-center space-x-6">
-				<font-awesome-icon v-for="item in technologies" :key="item.name" :icon="[ item.type, item.name ]" class="text-2xl text-gray-500" />
+			<div class="flex flex-col md:flex-row items-center md:space-x-6 space-y-4 md:space-y-0">
+				<div class="space-x-6">
+					<font-awesome-icon v-for="item in technologies" :key="item.name" :icon="[ item.type, item.name ]" class="text-2xl text-gray-500" />
+				</div>
 				<a :href="link" target="_blank" class="mx-auto">
 					<button class="flex justify-center items-center w-48 h-12 font-bold text-2xl text-white rounded-xl space-x-4" :style="`background-color: ${ color };`">
 						<font-awesome-icon :icon="[ 'fab', 'github' ]" class="text-3xl" />

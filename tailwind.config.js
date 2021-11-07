@@ -40,7 +40,8 @@ module.exports = {
 				"56": "14rem"
 			},
 			maxHeight: {
-				"138": "34.5rem"
+				"138": "34.5rem",
+				"160": "40rem"
 			},
 			zIndex: {
 				"-10": "-10"
