@@ -1,12 +1,12 @@
 <template>
 <transition name="fade">
-	<dim-background v-if="opened" class="z-20" @close-modal="opened = false">
+	<dim-background v-if="opened" class="z-20" @close-modal="opened = false; toggleBodyOverflow();">
 		<transition name="fade">
-			<navbar-modal	v-if="opened" :links="links" @close-modal="opened = false" />
+			<navbar-modal	v-if="opened" :links="links" @close-modal="opened = false; toggleBodyOverflow();" />
 		</transition>
 	</dim-background>
 </transition>
-<div class="absolute top-0 flex justify-between w-full h-24 px-12 bg-white">
+<div class="absolute top-0 flex justify-between w-full h-24 px-8 md:px-12 bg-white">
 	<div class="flex place-items-center space-x-4">
 		<img src="@/assets/icon.svg" :alt="nickname" class="w-10 h-10" />
 		<h1 class="text-2xl font-bold text-green-vlight hover:text-green-dark hidden md:block transition-colors">Shigeru's Portofolio</h1>
@@ -17,7 +17,7 @@
 				<font-awesome-icon :icon="[ link.faType, link.faIcon ]" class="m-auto" />
 			</router-link>
 		</div>
-		<div class="md:hidden" @click="opened = true">
+		<div class="md:hidden" @click="opened = true; toggleBodyOverflow();">
 			<font-awesome-icon :icon="[ 'fas', 'bars' ]" class="m-auto router-inactive" />
 		</div>
 	</div>
@@ -38,17 +38,25 @@
 import DimBackground from "@/components/shared/DimBackground.vue";
 import NavbarModal from "@/components/shared/NavbarModal.vue";
 import ILinkItem from "@/types/link-item";
+import { defineComponent } from "@vue/runtime-core";
 
-export default {
+export default defineComponent({
 	name: "Navbar",
 	components: {
 		DimBackground,
 		NavbarModal
 	},
-	data: () => {
+	data: function() {
 		return {
 			opened: false
 		};
+	},
+	methods: {
+		toggleBodyOverflow() {
+			this.opened
+				? document.body.classList.add("overflow-y-hidden")
+				: document.body.classList.remove("overflow-y-hidden");
+		}
 	},
 	props: {
 		title: {
@@ -68,5 +76,5 @@ export default {
 			required: true
 		}
 	}
-};
+});
 </script>

@@ -1,6 +1,6 @@
 <template>
 <navbar :title="navbar.title" :nickname="navbar.nickname" :links="navbar.links" />
-<div class="flex flex-col main-body mx-12 mt-24">
+<div class="flex flex-col main-body mx-6 md:mx-12 mt-24">
 	<router-view />
 	<Footer :imgcreator="footer.imgcreator" :imglink="footer.imglink" :links="footer.links" />
 </div>
