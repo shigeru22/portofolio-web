@@ -8,6 +8,7 @@
 				:alt="modalAlt"
 				:description="modalDesc"
 				:color="color"
+				:portrait="portrait"
 			/>
 		</transition>
 	</dim-background>
@@ -43,6 +44,7 @@
 						modalImg = screenshot.image;
 						modalAlt = screenshot.description;
 						modalDesc = screenshot.description;
+						portrait = screenshot.portrait;
 					"
 					:key="screenshot.name"
 					:src="require(`@/assets/${ screenshot.image }`)"
@@ -86,7 +88,8 @@ export default {
 			opened: false,
 			modalImg: "",
 			modalAlt: "",
-			modalDesc: ""
+			modalDesc: "",
+			portrait: false
 		};
 	},
 	props: {

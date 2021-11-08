@@ -38,7 +38,7 @@
       "longDescription": "Social media made simple.\n\nThis project is made for Web Programming mid-term test project, written in vanilla PHP and Bootstrap. The site itself is an ordinary social network where everyone could register, post, and comment each other.\nMostly worked in login and register backend, including login API.",
       "link": "https://github.com/Itsakaseru/Latus",
       "screenshots": [
-        { "image": "portofolio/screenshots/latus.jpg", "description": "Latus login page" }
+        { "image": "portofolio/screenshots/latus.jpg", "description": "Latus login page", "portrait": false }
       ]
     },
     {
@@ -53,7 +53,7 @@
       "longDescription": "Simple CRUD project for admin, teachers, and students.\n\nThis project is made for Web Programming's laboratory class mid-term test project, written in vanilla PHP and Bootstrap. It is simply a CRUD for admins to add and edit users, teachers to score their students' work, and students to see their results.\nWorked in every components, backends, and views.",
       "link": "https://github.com/shigeru22/USchool-2020",
       "screenshots": [
-        { "image": "portofolio/screenshots/uschool.jpg", "description": "USchool login page" }
+        { "image": "portofolio/screenshots/uschool.jpg", "description": "USchool login page", "portrait": false }
       ]
     },
     {
@@ -67,7 +67,7 @@
       "longDescription": "Software project as part of Software Project Management class' final project.\n\nCreated with Unity, this software is made with designs and requirements made per project's request where the user could order a drink with multiple topping and temperature options.\nMainly worked in coding, with some assistance in some script and components.",
       "link": "https://github.com/shigeru22/DuarDrincc",
       "screenshots": [
-        { "image": "portofolio/screenshots/duardrincc.jpg", "description": "DuarDrincc main screen" }
+        { "image": "portofolio/screenshots/duardrincc.jpg", "description": "DuarDrincc main screen", "portrait": false }
       ]
     },
     {
@@ -81,7 +81,7 @@
       "longDescription": "School CRUD project for admin, teachers, and students.\n\nThis project is made for Web Programming class final project, written using CodeIgniter PHP framework and Semantic UI. Same as my previous mid-term project for the same class, it is a CRUD for admin, teachers, and students for schools.\nMostly worked in backends for login and notifications, and designing the database.",
       "link": "https://github.com/Itsakaseru/Knoledge",
       "screenshots": [
-        { "image": "portofolio/screenshots/knoledge.jpg", "description": "Knoledge landing page" }
+        { "image": "portofolio/screenshots/knoledge.jpg", "description": "Knoledge landing page", "portrait": false }
       ]
     },
     {
@@ -95,7 +95,7 @@
       "longDescription": "A math learning based rhythm game.\n\nThis project is made for Game Design and Development class final project, created with Unity. The game lets the player to follow the rhythm while maintaining their rhythm and reaction times.\nMostly worked in mapping logic, design templating, and most backends.",
       "link": "https://github.com/2haus/MateMatirun",
       "screenshots": [
-        { "image": "portofolio/screenshots/matematirun.jpg", "description": "MateMatirun main menu" }
+        { "image": "portofolio/screenshots/matematirun.jpg", "description": "MateMatirun main menu", "portrait": true }
       ]
     },
     {
@@ -109,7 +109,7 @@
       "longDescription": "Daily routine wellbeing application.\n\nThis project is made for Mobile Programming class final project, made using Android Studio and SDK. It gives the user to add and be reminded of their routines while keeping track of them.\nMostly worked in database programming, preferences, and edit profile intent.",
       "link": "https://github.com/reaperastrea/Routine",
       "screenshots": [
-        { "image": "portofolio/screenshots/routine.jpg", "description": "Routine dashboard screen" }
+        { "image": "portofolio/screenshots/routine.jpg", "description": "Routine dashboard screen", "portrait": true }
       ]
     },
     {
@@ -123,7 +123,7 @@
       "longDescription": "Roll your way through the island!\n\nThis project is made for Game Design and Development 2 class final project, created using Unity. The game plays the concept of tilting the island and rolling the ball to the finish, inspired by Super Monkey Ball games.\nMostly worked in design and scripting.",
       "link": "https://github.com/shigeru22/world-roller",
       "screenshots": [
-        { "image": "portofolio/screenshots/worldroller.jpg", "description": "World Roller main menu" }
+        { "image": "portofolio/screenshots/worldroller.jpg", "description": "World Roller main menu", "portrait": false }
       ]
     },
     {
@@ -135,7 +135,7 @@
       "longDescription": "ONGEKI save data editor for UnityParrot generated files.\n\nDeveloped using Windows Presentation Foundation (WPF) based on .NET Framework, this project is created with the motivation to easily read the card's data and inserting them into saved files created with UnityParrot. Also reads all cards available and previews them.",
       "link": "https://github.com/shigeru22/ong-opencardmaker",
       "screenshots": [
-        { "image": "portofolio/screenshots/opencardmaker.jpg", "description": "OpenCardMaker main view" }
+        { "image": "portofolio/screenshots/opencardmaker.jpg", "description": "OpenCardMaker main view", "portrait": false }
       ]
     },
     {
@@ -149,7 +149,7 @@
       "longDescription": "Even this site needs credits, right?\n\nThis portofolio site has gone over 2 revisions, the first which uses solid green design, while the current revision uses card design language using the same base color, inspired by my friend's portofolio design.\nCreated using Vue CLI and Tailwind CSS, the second revision emphasizes component-based coding style by myself.",
       "link": "https://github.com/shigeru22/portofolio-web",
       "screenshots": [
-        { "image": "portofolio/screenshots/portofolio.jpg", "description": "This site's main page" }
+        { "image": "portofolio/screenshots/portofolio.jpg", "description": "This site's main page", "portrait": false }
       ]
     }
   ]

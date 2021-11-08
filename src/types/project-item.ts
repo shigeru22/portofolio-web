@@ -12,6 +12,7 @@ interface IProjectItem {
   screenshots: {
     image: string;
     description: string;
+    portrait: boolean;
   }[]
 }
 
