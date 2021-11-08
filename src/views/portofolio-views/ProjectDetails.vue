@@ -18,7 +18,7 @@
 		</transition>
 	</dim-background>
 </transition>
-<div class="flex flex-col lg:flex-row flex-grow justify-center mx-4 lg:mx-32 my-4 lg:my-8 gap-x-16 gap-y-8 overflow-y-none">
+<div class="flex flex-col lg:flex-row flex-grow justify-center mx-4 lg:mx-32 my-4 gap-x-16 gap-y-8 overflow-y-none">
 	<project-dropdown
 		:name="projects[$route.params.id - 1].name"
 		:icon="projects[$route.params.id - 1].icon"
