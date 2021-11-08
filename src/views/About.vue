@@ -1,19 +1,38 @@
 <template>
-  <div class="about my-auto mx-auto inline-grid justify-items-center p-4 bg-green-500">
-    <div class="md:m-4 md:my-auto">
-      <img src="@/assets/profpic.jpg" class="rounded-full w-32 md:my-auto" />
-    </div>
-    <div class="p-4 w-72 sm:w-96 md:w-144 lg:w-160 align-middle">
-      <p class="leading-normal font-medium text-white">
-        Just a guy of nothing. Really.<br /><br />
-        I'm Jeremy Yonathan, mostly known as my usual nickname Shigeru. Currently majoring in Informatics
-        at Universitas Multimedia Nusantara.<br />
-        I'm highly passionate in developing and learning about technology. Most commonly in .NET (C#)
-        including Unity and WPF, and web applications using PHP and Node.js.<br />
-        You may contact me using the links in the footer below. Either to say hi, or just for a random
-        chit-chat!<br /><br />
-        <small>*Note that I'm actually hard at communication though. :]</small>
-      </p>
-    </div>
-  </div>
+<div class="flex flex-grow justify-center items-center">
+	<quote-card :alt="nickname" :quote="quote" :subquote="subquote" />
+</div>
+<div class="fixed bottom-16 left-0 -z-10">
+	<img src="@/assets/icon.svg" :alt="nickname" class="w-screen max-w-xl opacity-10 transform rotate-12" />
+</div>
 </template>
+
+<style scoped>
+.main-body {
+	height: calc(100vh - theme("height.24"));
+}
+</style>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import QuoteCard from "@/components/about/QuoteCard.vue";
+import ILinkItem from "@/types/link-item";
+import Common from "@/common.json";
+
+export default defineComponent({
+	name: "About",
+	components: {
+		QuoteCard
+	},
+	data: () => {
+		return {
+			nickname: Common.nickname,
+			quote: Common.quote.about,
+			subquote: Common.quote.subquote,
+			imgcreator: Common.img.creator,
+			imglink: Common.img.link,
+			links: Common.footer.links as ILinkItem[]
+		};
+	}
+});
+</script>

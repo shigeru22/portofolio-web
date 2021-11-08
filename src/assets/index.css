@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.router-inactive {
+  @apply flex m-auto w-14 h-14 text-2xl text-green-vlight hover:text-green-dark transition-colors rounded-full;
+}
+
+.router-active {
+  @apply bg-green-vlight text-white hover:text-white !important;
+}
+
+.modal-router-inactive {
+  @apply w-full py-2 text-2xl text-green-vlight hover:text-green-dark transition-colors rounded-lg;
+}
+
+.modal-router-active {
+  @apply bg-green-vlight text-white hover:text-white !important;
+}
+
+abbr[title] {
+  @apply border-b-0 no-underline !important;
+}

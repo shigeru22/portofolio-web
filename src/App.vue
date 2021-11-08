@@ -1,36 +1,41 @@
 <template>
-  <div class="flex flex-col h-screen bg-green-50">
-    <Navbar v-bind:links="pages" class="flex" />
-    <div class="flex flex-1 overflow-auto container mx-auto justify-center">
-      <router-view />
-    </div>
-    <Footer v-bind="links" class="flex" />
-  </div>
+<navbar :title="navbar.title" :nickname="navbar.nickname" :links="navbar.links" />
+<div class="flex flex-col main-body mx-12 mt-24">
+	<router-view />
+	<Footer :imgcreator="footer.imgcreator" :imglink="footer.imglink" :links="footer.links" />
+</div>
 </template>
 
+<style scoped>
+.main-body {
+	min-height: calc(100vh - theme("height.24"));
+}
+</style>
+
 <script lang="ts">
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import Navbar from "@/components/shared/Navbar.vue";
+import Footer from "@/components/shared/Footer.vue";
+import ILinkItem from "@/types/link-item";
+import Common from "@/common.json";
 
 export default {
-  components: {
-    Navbar,
-    Footer
-  },
-  data: () => {
-    return {
-      pages: [
-        { name: "Home", link: "/" },
-        { name: "Portofolio", link: "/portofolio" },
-        { name: "About", link: "/about" }
-      ],
-      links: {
-        twitter: "https://twitter.com/shigeru_22",
-        linkedin: "https://www.linkedin.com/in/jeremy-yonathan/",
-        github: "https://github.com/shigeru22",
-        pfp: "https://safebooru.org/index.php?page=post&s=view&id=1612415"
-      }
-    }
-  }
-}
+	components: {
+		Navbar,
+		Footer
+	},
+	data: () => {
+		return {
+			navbar: {
+				title: Common.title,
+				nickname: Common.nickname,
+				links: Common.navbar.links as ILinkItem[]
+			},
+			footer: {
+				imgcreator: Common.img.creator,
+				imglink: Common.img.link,
+				links: Common.footer.links as ILinkItem[]
+			}
+		};
+	}
+};
 </script>
