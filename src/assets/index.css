@@ -12,6 +12,14 @@
   @apply bg-green-vlight text-white hover:text-white !important;
 }
 
+.modal-router-inactive {
+  @apply w-full py-2 text-2xl text-green-vlight hover:text-green-dark transition-colors rounded-lg;
+}
+
+.modal-router-active {
+  @apply bg-green-vlight text-white hover:text-white !important;
+}
+
 abbr[title] {
   @apply border-b-0 no-underline !important;
 }
