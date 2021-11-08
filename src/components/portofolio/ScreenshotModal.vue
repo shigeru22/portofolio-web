@@ -1,5 +1,5 @@
 <template>
-<div :class="`flex flex-col w-240 ${ portrait ? `h-portrait-mobile my-16` : `max-h-72` } mx-4 px-8 py-12 bg-white rounded-lg shadow-lg gap-y-6`">
+<div :class="`flex flex-col md:w-175 lg:w-240 ${ portrait ? `h-portrait-mobile my-16` : `max-h-72 md:max-h-112 lg:max-h-160` } mx-4 px-8 py-12 bg-white rounded-lg shadow-lg gap-y-6`">
 	<img :src="require(`@/assets/${ img }`)" class="h-full mx-auto" />
 	<p class="text-center text-semibold text-xl md:text-2xl" :style="{ 'color': color }">{{ description }}</p>
 </div>
