@@ -1,6 +1,6 @@
 <template>
 <transition name="fade">
-	<dim-background v-if="opened" @close-modal="opened = false">
+	<dim-background v-if="opened" @close-modal="opened = false; toggleBodyOverflow();">
 		<transition name="fade">
 			<screenshot-modal
 				v-if="opened"
@@ -45,6 +45,7 @@
 						modalAlt = screenshot.description;
 						modalDesc = screenshot.description;
 						portrait = screenshot.portrait;
+						; toggleBodyOverflow();
 					"
 					:key="screenshot.name"
 					:src="require(`@/assets/${ screenshot.image }`)"
@@ -74,10 +75,11 @@
 </style>
 
 <script lang="ts">
+import { defineComponent } from "vue";
 import DimBackground from "@/components/shared/DimBackground.vue";
 import ScreenshotModal from "@/components/portofolio/ScreenshotModal.vue";
 
-export default {
+export default defineComponent({
 	name: "ProjectDetailCard",
 	components: {
 		DimBackground,
@@ -91,6 +93,13 @@ export default {
 			modalDesc: "",
 			portrait: false
 		};
+	},
+	methods: {
+		toggleBodyOverflow() {
+			this.opened
+				? document.body.classList.add("overflow-y-hidden")
+				: document.body.classList.remove("overflow-y-hidden");
+		}
 	},
 	props: {
 		name: {
@@ -128,5 +137,5 @@ export default {
 			required: true
 		}
 	}
-};
+});
 </script>
