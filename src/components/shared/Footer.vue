@@ -1,6 +1,6 @@
 <template>
 <footer class="flex flex-col md:flex-row justify-between w-full h-auto md:h-24 py-4 md:py-0 gap-y-4">
-	<p class="my-auto font-bold text-center md:text-left text-xl md:text-2xl text-green-vlight">
+	<p class="my-auto font-bold text-center md:text-left text-xl xl:text-2xl text-green-vlight">
 		Profile picture by
 		<a :href="imglink" class="text-green-light hover:text-green-dark transition-colors">{{ imgcreator }}</a>.
 	</p>
