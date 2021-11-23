@@ -1,7 +1,7 @@
 <template>
 <router-link :to="`/portofolio/${ index }`" class="flex items-center px-4 md:px-6 py-2 w-full rounded-2xl space-x-4 item" active-class="selected" :style="`--hover-color: ${ color }11; --selected-color: ${ color }22;`">
-	<img :src="require(`@/assets/${ icon }`)" :alt="name" class="w-8 md:w-10 h-8 md:h-10" />
-	<h3 class="font-bold text-xl md:text-2xl truncate" :style="{ 'color': color }">
+	<img :src="require(`@/assets/${ icon }`)" :alt="name" class="w-8 xl:w-10 h-8 xl:h-10" />
+	<h3 class="font-bold text-xl xl:text-2xl truncate" :style="{ 'color': color }">
 		<abbr :title="name">{{ name }}</abbr>
 	</h3>
 </router-link>
