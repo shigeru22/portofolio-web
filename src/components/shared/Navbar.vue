@@ -7,10 +7,12 @@
 	</dim-background>
 </transition>
 <div class="absolute top-0 flex justify-between w-full h-24 px-8 md:px-12 bg-white">
-	<div class="flex place-items-center space-x-4">
-		<img src="@/assets/icon.svg" :alt="nickname" class="w-10 h-10" />
-		<h1 class="text-2xl font-bold text-green-vlight hover:text-green-dark hidden md:block transition-colors">Shigeru's Portofolio</h1>
-	</div>
+	<router-link :to="'/'" class="flex">
+		<div class="flex place-items-center space-x-4">
+			<img src="@/assets/icon.svg" :alt="nickname" class="w-10 h-10" />
+			<h1 class="text-2xl font-bold text-green-vlight hover:text-green-dark hidden md:block transition-colors">Shigeru's Portofolio</h1>
+		</div>
+	</router-link>
 	<div class="flex items-center">
 		<div class="hidden md:flex space-x-10">
 			<router-link v-for="link in links" :key="link.name" :to="link.href" class="router-inactive" active-class="router-active">
