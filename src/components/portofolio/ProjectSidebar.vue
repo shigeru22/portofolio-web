@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-col w-100 card-full-height shadow-lg rounded-lg">
-	<div class="flex flex-col sidebar-contents-height m-8 overflow-y-auto gap-y-2">
+	<div class="flex flex-col sidebar-contents-height-lg xl:sidebar-contents-height-xl m-6 xl:m-8 overflow-y-auto gap-y-2">
 		<project-item v-for="(project, index) in projects" :key="index + 1" :index="index + 1" :name="project.name" :icon="project.icon" :color="project.color" />
 	</div>
 </div>
@@ -11,7 +11,11 @@
 	height: calc(100vh - theme("height.60"));
 }
 
-.sidebar-contents-height {
+.sidebar-contents-height-lg {
+	height: calc(100% - theme("height.12"));
+}
+
+.sidebar-contents-height-xl {
 	height: calc(100% - theme("height.16"));
 }
 </style>
