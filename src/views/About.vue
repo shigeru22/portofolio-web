@@ -3,7 +3,7 @@
 	<quote-card :alt="nickname" :quote="quote" :subquote="subquote" />
 </div>
 <div class="fixed bottom-16 left-0 -z-10">
-	<img src="@/assets/icon.svg" :alt="nickname" class="w-screen max-w-xl opacity-10 transform rotate-12" />
+	<img src="@/assets/icon.svg" :alt="nickname" class="w-screen lg:max-w-xs xl:max-w-md opacity-10 transform rotate-12" />
 </div>
 </template>
 
