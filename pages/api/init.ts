@@ -5,7 +5,7 @@ import { LogSeverity, log } from "../../utils/log";
 import { isEnvironmentKeyEqual } from "../../utils/key";
 import { IMessageData } from "../../types/api/message";
 import { IInitPOSTData } from "../../types/api/init";
-import { IProjectItemData } from "../../types/api/project-item";
+import { IProjectItemData } from "../../types/project-item";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<IMessageData>) {
 	if(req.method !== HTTPMethod.POST) {
