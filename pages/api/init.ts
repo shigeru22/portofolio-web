@@ -5,6 +5,7 @@ import { LogSeverity, log } from "../../utils/log";
 import { isEnvironmentKeyEqual } from "../../utils/key";
 import { IMessageData } from "../../types/api/message";
 import { IInitPOSTData } from "../../types/api/init";
+import { IProjectItemData } from "../../types/api/project-item";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<IMessageData>) {
 	if(req.method !== HTTPMethod.POST) {
@@ -49,7 +50,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 	const db = deta.Base("portfolio-items");
 
 	try {
-		await db.put({
+		const item: IProjectItemData = {
 			name: "Test",
 			description: "Item example.",
 			icon: "test.png",
@@ -66,10 +67,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 					portrait: false
 				}
 			]
+		};
+
+		await db.put({
+			name: item.name,
+			description: item.description,
+			icon: item.icon,
+			color: item.color,
+			technologies: item.technologies,
+			longDescription: item.longDescription,
+			link: item.link,
+			screenshots: item.screenshots
 		});
 
 		const data: IMessageData = {
-			message: "Data sample insertion success. Check Deta Base for inserted data."
+			message: "Sample data insertion success. Check Deta Base GUI for inserted data."
 		};
 
 		res.status(HTTPStatus.OK).json(data);
