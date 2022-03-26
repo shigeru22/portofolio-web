@@ -5,7 +5,7 @@ import { LogSeverity, log } from "../../../utils/log";
 import { isEnvironmentKeyEqual } from "../../../utils/key";
 import { isProjectItemKeysDefined, isProjectItemKeysTypeValid, isProjectItemKeysValueValid } from "../../../utils/validation";
 import { IMessageData } from "../../../types/api/message";
-import { IProjectItemPOSTData } from "../../../types/api/projects";
+import { IProjectItemData } from "../../../types/project-item";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<IMessageData>) {
 	if(req.method !== HTTPMethod.POST) {
@@ -26,7 +26,37 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		return;
 	}
 
-	const body = req.body as IProjectItemPOSTData;
+	if(typeof(req.headers.authorization) === "undefined") {
+		const data: IMessageData = {
+			message: "Authorization not provided."
+		};
+
+		res.status(HTTPStatus.UNAUTHORIZED).json(data);
+		return;
+	}
+
+	const authData = req.headers.authorization.split(" ");
+	if(authData.length !== 2 || authData[0] !== "Bearer") {
+		const data: IMessageData = {
+			message: "Invalid authorization data."
+		};
+
+		log(LogSeverity.WARN, "init/handler", "Invalid authorization provided.");
+		res.status(HTTPStatus.UNAUTHORIZED).json(data);
+		return;
+	}
+
+	if(!isEnvironmentKeyEqual(authData[1])) {
+		const data: IMessageData = {
+			message: "Invalid authorization data."
+		};
+
+		log(LogSeverity.WARN, "init/handler", "Invalid key provided.");
+		res.status(HTTPStatus.UNAUTHORIZED).json(data);
+		return;
+	}
+
+	const body = req.body as IProjectItemData;
 	if(!validatePostData(body)) {
 		const data: IMessageData = {
 			message: "Invalid POST data."
@@ -36,31 +66,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		return;
 	}
 
-	if(!isEnvironmentKeyEqual(body.key)) {
-		const data: IMessageData = {
-			message: "Invalid POST data."
-		};
-
-		log(LogSeverity.WARN, "projects/add/handler", "Invalid key provided.");
-		res.status(HTTPStatus.BAD_REQUEST).json(data);
-		return;
-	}
-
-	const deta = Deta(body.key);
+	const deta = Deta(authData[1]);
 	const db = deta.Base("portfolio-items");
 
 	try {
 		const date = new Date();
 
 		await db.put({
-			name: body.data.name,
-			description: body.data.description,
-			icon: body.data.icon,
-			color: body.data.color,
-			technologies: body.data.technologies,
-			longDescription: body.data.longDescription,
-			projectLink: body.data.projectLink,
-			screenshots: body.data.screenshots,
+			name: body.name,
+			description: body.description,
+			icon: body.icon,
+			color: body.color,
+			technologies: body.technologies,
+			longDescription: body.longDescription,
+			projectLink: body.projectLink,
+			screenshots: body.screenshots,
 			dateAdded: date.toISOString()
 		});
 
@@ -86,10 +106,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 	}
 }
 
-function validatePostData(data: IProjectItemPOSTData) {
-	const isDefined = typeof(data.key) !== "undefined" && isProjectItemKeysDefined(data.data);
-	const hasValidTypes = typeof(data.key) === "string" && isProjectItemKeysTypeValid(data.data);
-	const hasValidData = hasValidTypes && data.key !== "" && isProjectItemKeysValueValid(data.data);
+function validatePostData(data: IProjectItemData) {
+	const isDefined = isProjectItemKeysDefined(data);
+	const hasValidTypes = isProjectItemKeysTypeValid(data);
+	const hasValidData = hasValidTypes && isProjectItemKeysValueValid(data);
 
 	log(LogSeverity.DEBUG, "projects/add/validatePostData", `isDefined = ${ isDefined }, hasValidTypes = ${ hasValidTypes }, hasValidData = ${ hasValidData }`);
 

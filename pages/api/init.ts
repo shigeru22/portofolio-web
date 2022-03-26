@@ -4,7 +4,6 @@ import { HTTPStatus, HTTPMethod } from "../../utils/http";
 import { LogSeverity, log } from "../../utils/log";
 import { isEnvironmentKeyEqual } from "../../utils/key";
 import { IMessageData } from "../../types/api/message";
-import { IInitPOSTData } from "../../types/api/init";
 import { IProjectItemDetailData } from "../../types/api/projects";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<IMessageData>) {
@@ -26,27 +25,37 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		return;
 	}
 
-	const body = req.body as IInitPOSTData;
-	if(!validatePostData(body)) {
+	if(typeof(req.headers.authorization) === "undefined") {
 		const data: IMessageData = {
-			message: "Invalid POST data."
+			message: "Authorization not provided."
 		};
 
-		res.status(HTTPStatus.BAD_REQUEST).json(data);
+		res.status(HTTPStatus.UNAUTHORIZED).json(data);
 		return;
 	}
 
-	if(!isEnvironmentKeyEqual(body.key)) {
+	const authData = req.headers.authorization.split(" ");
+	if(authData.length !== 2 || authData[0] !== "Bearer") {
 		const data: IMessageData = {
-			message: "Invalid POST data."
+			message: "Invalid authorization data."
+		};
+
+		log(LogSeverity.WARN, "init/handler", "Invalid authorization provided.");
+		res.status(HTTPStatus.UNAUTHORIZED).json(data);
+		return;
+	}
+
+	if(!isEnvironmentKeyEqual(authData[1])) {
+		const data: IMessageData = {
+			message: "Invalid authorization data."
 		};
 
 		log(LogSeverity.WARN, "init/handler", "Invalid key provided.");
-		res.status(HTTPStatus.BAD_REQUEST).json(data);
+		res.status(HTTPStatus.UNAUTHORIZED).json(data);
 		return;
 	}
 
-	const deta = Deta(body.key);
+	const deta = Deta(authData[1]);
 	const db = deta.Base("portfolio-items");
 
 	try {
@@ -102,14 +111,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
 		res.status(HTTPStatus.INTERNAL_SERVER_ERROR).json(data);
 	}
-}
-
-function validatePostData(data: IInitPOSTData) {
-	const isDefined = typeof(data.key) !== "undefined";
-	const hasValidTypes = typeof(data.key) === "string";
-	const hasValidData = hasValidTypes && data.key !== "";
-
-	log(LogSeverity.DEBUG, "init/validatePostData", `isDefined = ${ isDefined }, hasValidTypes = ${ hasValidTypes }, hasValidData = ${ hasValidData }`);
-
-	return isDefined && hasValidTypes && hasValidData;
 }
