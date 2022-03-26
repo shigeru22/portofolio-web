@@ -50,6 +50,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 	const db = deta.Base("portfolio-items");
 
 	try {
+		const date = new Date();
+
 		await db.put({
 			name: body.data.name,
 			description: body.data.description,
@@ -57,8 +59,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			color: body.data.color,
 			technologies: body.data.technologies,
 			longDescription: body.data.longDescription,
-			link: body.data.link,
-			screenshots: body.data.screenshots
+			projectLink: body.data.projectLink,
+			screenshots: body.data.screenshots,
+			dateAdded: date.toISOString()
 		});
 
 		const data: IMessageData = {

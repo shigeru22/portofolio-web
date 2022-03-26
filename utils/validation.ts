@@ -32,7 +32,7 @@ export function isProjectItemKeysDefined(item: IProjectItemData) {
 		typeof(item.color) !== "undefined" &&
 		isTechnologiesArrayDataDefined &&
 		typeof(item.longDescription) !== "undefined" &&
-		typeof(item.link) !== "undefined" &&
+		typeof(item.projectLink) !== "undefined" &&
 		isScreenshotArrayDataDefined;
 }
 
@@ -68,7 +68,7 @@ export function isProjectItemKeysTypeValid(item: IProjectItemData) {
 		typeof(item.color) === "string" &&
 		isTechnologiesArrayTypeValid &&
 		typeof(item.longDescription) === "string" &&
-		typeof(item.link) === "string" &&
+		typeof(item.projectLink) === "string" &&
 		isScreenshotArrayTypeValid;
 }
 
@@ -102,6 +102,6 @@ export function isProjectItemKeysValueValid(item: IProjectItemData) {
 		item.color !== "" &&
 		isTechnologiesArrayDataValid &&
 		item.longDescription !== "" &&
-		item.link !== "" &&
+		item.projectLink !== "" &&
 		isScreenshotArrayDataValid;
 }

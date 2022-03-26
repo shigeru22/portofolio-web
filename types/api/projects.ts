@@ -2,6 +2,10 @@ import { IKeyPOSTData } from "./key";
 import { IProjectItemData } from "../project-item";
 import { IMessageData } from "./message";
 
+export interface IProjectItemDetailData extends IProjectItemData {
+	dateAdded: Date | string;
+}
+
 export interface IProjectItemPOSTData extends IKeyPOSTData {
 	data: IProjectItemData;
 }

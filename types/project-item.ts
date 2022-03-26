@@ -5,7 +5,7 @@ export interface IProjectItemData {
   color: string;
   technologies: string[];
   longDescription: string;
-  link: string;
+  projectLink: string;
   screenshots: {
       image: string;
       description: string;

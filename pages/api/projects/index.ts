@@ -3,8 +3,7 @@ import { Deta } from "deta";
 import { HTTPStatus, HTTPMethod } from "../../../utils/http";
 import { LogSeverity, log } from "../../../utils/log";
 import { IMessageData } from "../../../types/api/message";
-import { IProjectItemData } from "../../../types/project-item";
-import { IProjectItemsResponseData } from "../../../types/api/projects";
+import { IProjectItemDetailData, IProjectItemsResponseData } from "../../../types/api/projects";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<IMessageData>) {
 	if(req.method !== HTTPMethod.GET) {
@@ -29,10 +28,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 	const db = deta.Base("portfolio-items");
 
 	try {
-		const fetchResult = (await db.fetch()).items as unknown as IProjectItemData[];
+		const fetchResult = (await db.fetch()).items as unknown as IProjectItemDetailData[];
+		fetchResult.sort((a, b) => {
+			const dateA: Date = typeof(a.dateAdded) === "string" ? new Date(a.dateAdded) : a.dateAdded;
+			const dateB: Date = typeof(b.dateAdded) === "string" ? new Date(b.dateAdded) : b.dateAdded;
+
+			return dateA.getTime() - dateB.getTime();
+		});
+
 		const data: IProjectItemsResponseData = {
 			message: "Data retrieved successfully.",
-			data: fetchResult
+			data: fetchResult.map(item => ({
+				name: item.name,
+				description: item.description,
+				icon: item.icon,
+				color: item.color,
+				technologies: item.technologies,
+				longDescription: item.longDescription,
+				projectLink: item.projectLink,
+				screenshots: item.screenshots
+			}))
 		};
 
 		res.status(HTTPStatus.OK).json(data);

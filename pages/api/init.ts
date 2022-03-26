@@ -5,7 +5,7 @@ import { LogSeverity, log } from "../../utils/log";
 import { isEnvironmentKeyEqual } from "../../utils/key";
 import { IMessageData } from "../../types/api/message";
 import { IInitPOSTData } from "../../types/api/init";
-import { IProjectItemData } from "../../types/project-item";
+import { IProjectItemDetailData } from "../../types/api/projects";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<IMessageData>) {
 	if(req.method !== HTTPMethod.POST) {
@@ -50,7 +50,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 	const db = deta.Base("portfolio-items");
 
 	try {
-		const item: IProjectItemData = {
+		const item: IProjectItemDetailData = {
 			name: "Test",
 			description: "Item example.",
 			icon: "test.png",
@@ -59,14 +59,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 				"nodedotjs"
 			],
 			longDescription: "A very long example for Test item.",
-			link: "https://github.com/example/example",
+			projectLink: "https://github.com/example/example",
 			screenshots: [
 				{
 					image: "screenshots/test.jpg",
 					description: "Test page",
 					portrait: false
 				}
-			]
+			],
+			dateAdded: new Date()
 		};
 
 		await db.put({
@@ -76,8 +77,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			color: item.color,
 			technologies: item.technologies,
 			longDescription: item.longDescription,
-			link: item.link,
-			screenshots: item.screenshots
+			projectLink: item.projectLink,
+			screenshots: item.screenshots,
+			dateAdded: typeof(item.dateAdded) === "string" ? item.dateAdded : item.dateAdded.toISOString()
 		});
 
 		const data: IMessageData = {
