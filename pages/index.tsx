@@ -1,6 +1,10 @@
+import ProfilePicture from "../components/profile-picture";
+
 function Home() {
 	return (
-		<div className="py-4 text-3xl text-center font-semibold text-slate-800">Home page</div>
+		<div className="flex justify-center items-center h-full">
+			<ProfilePicture src="/profpic.jpg" />
+		</div>
 	);
 }
 
