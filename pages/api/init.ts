@@ -60,6 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
 	try {
 		const item: IProjectItemDetailData = {
+			id: 1,
 			name: "Test",
 			description: "Item example.",
 			icon: "test.png",
@@ -80,6 +81,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		};
 
 		await db.put({
+			id: item.id,
 			name: item.name,
 			description: item.description,
 			icon: item.icon,

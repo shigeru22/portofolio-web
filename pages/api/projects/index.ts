@@ -29,16 +29,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
 	try {
 		const fetchResult = (await db.fetch()).items as unknown as IProjectItemDetailData[];
-		fetchResult.sort((a, b) => {
-			const dateA: Date = typeof(a.dateAdded) === "string" ? new Date(a.dateAdded) : a.dateAdded;
-			const dateB: Date = typeof(b.dateAdded) === "string" ? new Date(b.dateAdded) : b.dateAdded;
-
-			return dateA.getTime() - dateB.getTime();
-		});
+		fetchResult.sort((a, b) => a.id - b.id);
 
 		const data: IProjectItemsResponseData = {
 			message: "Data retrieved successfully.",
 			data: fetchResult.map(item => ({
+				id: item.id,
 				name: item.name,
 				description: item.description,
 				icon: item.icon,

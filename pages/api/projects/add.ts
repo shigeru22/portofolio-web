@@ -5,6 +5,7 @@ import { LogSeverity, log } from "../../../utils/log";
 import { isEnvironmentKeyEqual } from "../../../utils/key";
 import { isProjectItemKeysDefined, isProjectItemKeysTypeValid, isProjectItemKeysValueValid } from "../../../utils/validation";
 import { IMessageData } from "../../../types/api/message";
+import { IProjectItemDetailData } from "../../../types/api/projects";
 import { IProjectItemData } from "../../../types/project-item";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<IMessageData>) {
@@ -70,9 +71,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 	const db = deta.Base("portfolio-items");
 
 	try {
+		let currentLastId = 0;
+		{
+			const currentData = (await db.fetch()).items as unknown as IProjectItemDetailData[];
+			if(currentData.length > 0) {
+				currentLastId = currentData[currentData.length - 1].id;
+			}
+		}
+
 		const date = new Date();
 
 		await db.put({
+			id: currentLastId + 1,
 			name: body.name,
 			description: body.description,
 			icon: body.icon,
