@@ -60,7 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
 	try {
 		const item: IProjectItemDetailData = {
-			id: 1,
+			key: (1).toString(),
 			name: "Test",
 			description: "Item example.",
 			icon: "test.png",
@@ -81,7 +81,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		};
 
 		await db.put({
-			id: item.id,
 			name: item.name,
 			description: item.description,
 			icon: item.icon,
@@ -91,7 +90,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			projectLink: item.projectLink,
 			screenshots: item.screenshots,
 			dateAdded: typeof(item.dateAdded) === "string" ? item.dateAdded : item.dateAdded.toISOString()
-		});
+		}, item.key);
 
 		const data: IMessageData = {
 			message: "Sample data insertion success. Check Deta Base GUI for inserted data."

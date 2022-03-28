@@ -1,5 +1,4 @@
 export interface IProjectItemData {
-  id: number;
   name: string;
   description: string;
   icon: string;
@@ -12,4 +11,8 @@ export interface IProjectItemData {
       description: string;
       portrait: boolean;
   }[];
+}
+
+export interface IProjectItemKeyData extends IProjectItemData {
+  key: string;
 }

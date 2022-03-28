@@ -75,14 +75,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		{
 			const currentData = (await db.fetch()).items as unknown as IProjectItemDetailData[];
 			if(currentData.length > 0) {
-				currentLastId = currentData[currentData.length - 1].id;
+				currentLastId = parseInt(currentData[currentData.length - 1].key, 10);
 			}
+		}
+
+		if(isNaN(currentLastId)) {
+			const data: IMessageData = {
+				message: "Inconsistent data key detected."
+			};
+
+			log(LogSeverity.ERROR, "projects/add/handler", "Non-numeric key string detected. Fix the key and try again.");
+			res.status(HTTPStatus.INTERNAL_SERVER_ERROR).json(data);
+			return;
 		}
 
 		const date = new Date();
 
 		await db.put({
-			id: currentLastId + 1,
 			name: body.name,
 			description: body.description,
 			icon: body.icon,
@@ -92,7 +101,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			projectLink: body.projectLink,
 			screenshots: body.screenshots,
 			dateAdded: date.toISOString()
-		});
+		}, (currentLastId + 1).toString());
 
 		const data: IMessageData = {
 			message: "Data insertion success. Check Deta Base GUI for inserted data."
