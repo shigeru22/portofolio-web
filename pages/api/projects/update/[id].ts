@@ -42,7 +42,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			message: "Invalid authorization data."
 		};
 
-		log(LogSeverity.WARN, "init/handler", "Invalid authorization provided.");
+		log(LogSeverity.WARN, "projects/update/handler", "Invalid authorization provided.");
 		res.status(HTTPStatus.UNAUTHORIZED).json(data);
 		return;
 	}
@@ -52,7 +52,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			message: "Invalid authorization data."
 		};
 
-		log(LogSeverity.WARN, "init/handler", "Invalid key provided.");
+		log(LogSeverity.WARN, "projects/update/handler", "Invalid key provided.");
 		res.status(HTTPStatus.UNAUTHORIZED).json(data);
 		return;
 	}
@@ -118,14 +118,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			message: "Data update success. Check Deta Base GUI for updated data."
 		};
 
+		log(LogSeverity.LOG, "projects/update/handler", `portfolio-item: Updated 1 row with key: ${ prevData.key }.`);
 		res.status(HTTPStatus.OK).json(data);
 	}
 	catch (e) {
 		if(e instanceof Error) {
-			log(LogSeverity.ERROR, "projects/add/handler", `${ e.name }: ${ e.message }`);
+			log(LogSeverity.ERROR, "projects/update/handler", `${ e.name }: ${ e.message }`);
 		}
 		else {
-			log(LogSeverity.ERROR, "projects/add/handler", "Unknown error occurred.");
+			log(LogSeverity.ERROR, "projects/update/handler", "Unknown error occurred.");
 		}
 
 		const data: IMessageData = {
@@ -141,7 +142,7 @@ function validatePostData(data: IProjectItemData) {
 	const hasValidTypes = isProjectItemKeysTypeValid(data);
 	const hasValidData = hasValidTypes && isProjectItemKeysValueValid(data);
 
-	log(LogSeverity.DEBUG, "projects/add/validatePostData", `isDefined = ${ isDefined }, hasValidTypes = ${ hasValidTypes }, hasValidData = ${ hasValidData }`);
+	log(LogSeverity.DEBUG, "projects/update/validatePostData", `isDefined = ${ isDefined }, hasValidTypes = ${ hasValidTypes }, hasValidData = ${ hasValidData }`);
 
 	return isDefined && hasValidTypes && hasValidData;
 }

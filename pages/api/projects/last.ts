@@ -56,6 +56,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			}
 		};
 
+		log(LogSeverity.LOG, "projects/last/handler", `portfolio-item: Returned last item with key: ${ fetchResult[lastIndex].key }.`);
 		res.status(HTTPStatus.OK).json(data);
 	}
 	catch (e) {

@@ -107,6 +107,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			message: "Data insertion success. Check Deta Base GUI for inserted data."
 		};
 
+		log(LogSeverity.LOG, "projects/add/handler", "portfolio-items: Inserted 1 row.");
 		res.status(HTTPStatus.OK).json(data);
 	}
 	catch (e) {

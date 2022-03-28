@@ -53,6 +53,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			}))
 		};
 
+		log(LogSeverity.LOG, "projects/handler", `portfolio-items: Returned ${ fetchResult.length } rows.`);
 		res.status(HTTPStatus.OK).json(data);
 	}
 	catch (e) {

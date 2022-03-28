@@ -4,6 +4,7 @@ import { HTTPStatus, HTTPMethod } from "../../../../utils/http";
 import { LogSeverity, log } from "../../../../utils/log";
 import { isEnvironmentKeyEqual } from "../../../../utils/key";
 import { IMessageData } from "../../../../types/api/message";
+import { IProjectItemDetailData } from "../../../../types/api/projects";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<IMessageData>) {
 	if(req.method !== HTTPMethod.DELETE) {
@@ -39,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			message: "Invalid authorization data."
 		};
 
-		log(LogSeverity.WARN, "init/handler", "Invalid authorization provided.");
+		log(LogSeverity.WARN, "projects/delete/handler", "Invalid authorization provided.");
 		res.status(HTTPStatus.UNAUTHORIZED).json(data);
 		return;
 	}
@@ -49,7 +50,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			message: "Invalid authorization data."
 		};
 
-		log(LogSeverity.WARN, "init/handler", "Invalid key provided.");
+		log(LogSeverity.WARN, "projects/delete/handler", "Invalid key provided.");
 		res.status(HTTPStatus.UNAUTHORIZED).json(data);
 		return;
 	}
@@ -87,20 +88,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			return;
 		}
 
+		const queryData = query as unknown as IProjectItemDetailData;
+
 		await db.delete(req.query.id);
 
 		const data: IMessageData = {
 			message: "Data deletion success."
 		};
 
+		log(LogSeverity.LOG, "projects/delete/handler", `portfolio-web: Deleted 1 row with key: ${ queryData.key }.`);
 		res.status(HTTPStatus.OK).json(data);
 	}
 	catch (e) {
 		if(e instanceof Error) {
-			log(LogSeverity.ERROR, "projects/add/handler", `${ e.name }: ${ e.message }`);
+			log(LogSeverity.ERROR, "projects/delete/handler", `${ e.name }: ${ e.message }`);
 		}
 		else {
-			log(LogSeverity.ERROR, "projects/add/handler", "Unknown error occurred.");
+			log(LogSeverity.ERROR, "projects/delete/handler", "Unknown error occurred.");
 		}
 
 		const data: IMessageData = {
