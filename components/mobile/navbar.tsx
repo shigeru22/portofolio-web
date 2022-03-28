@@ -7,7 +7,7 @@ interface IMobileNavbarProps {
 
 function MobileNavbar({ iconSrc }: IMobileNavbarProps) {
 	return (
-		<div className="flex justify-between items-center w-full h-24 px-8">
+		<div className="flex justify-between items-center w-full h-24 px-8 py-6 bg-white">
 			<div className="relative h-8 aspect-square">
 				<Image src={ iconSrc } alt="Website Icon" layout="fill" className="h-8 aspect-square" />
 			</div>
