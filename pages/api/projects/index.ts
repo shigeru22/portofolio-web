@@ -39,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		const data: IProjectItemsResponseData = {
 			message: "Data retrieved successfully.",
 			data: fetchResult.map(item => ({
-				key: item.key,
+				key: parseInt(item.key, 10),
 				item: {
 					name: item.name,
 					description: item.description,

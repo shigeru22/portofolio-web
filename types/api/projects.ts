@@ -7,14 +7,14 @@ export interface IProjectItemDetailData extends IProjectItemKeyData {
 
 export interface IProjectItemResponseData extends IMessageData {
 	data: {
-		key: string;
+		key: number;
 		item: IProjectItemData;
 	};
 }
 
 export interface IProjectItemsResponseData extends IMessageData {
 	data: {
-		key: string;
+		key: number;
 		item: IProjectItemData;
 	}[];
 }
