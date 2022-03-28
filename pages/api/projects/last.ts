@@ -41,7 +41,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		const lastIndex = fetchResult.length - 1;
 		const data: IProjectItemResponseData = {
 			message: "Data retrieved successfully.",
-			data: fetchResult[lastIndex]
+			data: {
+				key: fetchResult[lastIndex].key,
+				item: {
+					name: fetchResult[lastIndex].name,
+					description: fetchResult[lastIndex].description,
+					icon: fetchResult[lastIndex].icon,
+					color: fetchResult[lastIndex].color,
+					technologies: fetchResult[lastIndex].technologies,
+					longDescription: fetchResult[lastIndex].longDescription,
+					projectLink: fetchResult[lastIndex].projectLink,
+					screenshots: fetchResult[lastIndex].screenshots
+				}
+			}
 		};
 
 		res.status(HTTPStatus.OK).json(data);

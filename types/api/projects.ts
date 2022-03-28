@@ -1,4 +1,4 @@
-import { IProjectItemKeyData } from "../project-item";
+import { IProjectItemKeyData, IProjectItemData } from "../project-item";
 import { IMessageData } from "./message";
 
 export interface IProjectItemDetailData extends IProjectItemKeyData {
@@ -6,9 +6,15 @@ export interface IProjectItemDetailData extends IProjectItemKeyData {
 }
 
 export interface IProjectItemResponseData extends IMessageData {
-	data: IProjectItemKeyData;
+	data: {
+		key: string;
+		item: IProjectItemData;
+	};
 }
 
 export interface IProjectItemsResponseData extends IMessageData {
-	data: IProjectItemKeyData[];
+	data: {
+		key: string;
+		item: IProjectItemData;
+	}[];
 }

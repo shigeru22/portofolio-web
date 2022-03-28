@@ -40,14 +40,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 			message: "Data retrieved successfully.",
 			data: fetchResult.map(item => ({
 				key: item.key,
-				name: item.name,
-				description: item.description,
-				icon: item.icon,
-				color: item.color,
-				technologies: item.technologies,
-				longDescription: item.longDescription,
-				projectLink: item.projectLink,
-				screenshots: item.screenshots
+				item: {
+					name: item.name,
+					description: item.description,
+					icon: item.icon,
+					color: item.color,
+					technologies: item.technologies,
+					longDescription: item.longDescription,
+					projectLink: item.projectLink,
+					screenshots: item.screenshots
+				}
 			}))
 		};
 
