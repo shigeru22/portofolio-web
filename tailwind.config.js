@@ -27,7 +27,11 @@ module.exports = {
 		fontFamily: {
 			"sans": [ "Jost", "sans-serif" ]
 		},
-		extend: {}
+		extend: {
+			minWidth: {
+				"50": "12.5rem"
+			}
+		}
 	},
 	plugins: []
 };
