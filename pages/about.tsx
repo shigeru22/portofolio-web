@@ -1,6 +1,9 @@
 import SVG from "react-inlinesvg";
 import ContentContainer from "../components/content-container";
+import LanguageGraph from "../components/language-graph";
+import Button from "../components/button";
 import { getSimpleIconLink } from "../utils/simple-icons";
+import { ILanguageGraphData } from "../types/components/language-graph";
 
 interface ITechnologySlugs {
 	id: number;
@@ -39,6 +42,39 @@ function About() {
 		}
 	];
 
+	const languages: ILanguageGraphData[] = [
+		{
+			id: 1,
+			percentage: 75,
+			label: "C#"
+		},
+		{
+			id: 1,
+			percentage: 50,
+			label: "C++"
+		},
+		{
+			id: 1,
+			percentage: 60,
+			label: "Java"
+		},
+		{
+			id: 1,
+			percentage: 85,
+			label: "HTML"
+		},
+		{
+			id: 1,
+			percentage: 70,
+			label: "CSS"
+		},
+		{
+			id: 1,
+			percentage: 80,
+			label: "JS/TS"
+		}
+	];
+
 	return (
 		<div className="w-full h-full px-8">
 			<ContentContainer>
@@ -59,6 +95,28 @@ function About() {
 							))
 						}
 					</div>
+				</div>
+				<div className="space-y-2">
+					<h3 className="font-medium text-lg text-light-0">Languages:</h3>
+					<LanguageGraph data={ languages } />
+				</div>
+				<div className="space-y-2">
+					<p className="text-2xl text-light-0 leading-normal">
+						You may contact me using the links below. Either to say hi, or just for a random chat!
+					</p>
+					<p className="text-lg text-light-0 leading-snug">
+						*Note that I&apos;m actually hard at communication though :]
+					</p>
+				</div>
+				<div className="flex justify-center w-full">
+					<div className="flex flex-col gap-y-2">
+						<Button iconSlug="twitter" label="Twitter" />
+						<Button iconSlug="linkedin" label="LinkedIn" />
+						<Button iconSlug="github" label="GitHub" />
+					</div>
+				</div>
+				<div className="flex justify-center w-full pt-2">
+					<SVG src="/kyuu.svg" className="h-12 fill-light-20 aspect-square" />
 				</div>
 			</ContentContainer>
 		</div>
