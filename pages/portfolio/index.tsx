@@ -3,7 +3,7 @@ import axios from "axios";
 import ContentContainer from "../../components/content-container";
 import ProjectItem from "../../components/project-item";
 import { HTTPStatus } from "../../utils/http";
-import { IProjectItemsKeyData } from "../../types/project-item";
+import { IProjectItemKeyData } from "../../types/project-item";
 
 function Portfolio({ projects }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
@@ -11,7 +11,11 @@ function Portfolio({ projects }: InferGetStaticPropsType<typeof getStaticProps>)
 			<ContentContainer>
 				<h1 className="text-center font-semibold text-4xl text-light-0">Portfolio</h1>
 				<div className="flex flex-col gap-y-2">
-					<ProjectItem id={ 1 } name="Latus" description="Social media made simple." iconSrc="/projects/latus.png" />
+					{
+						projects.map(project => (
+							<ProjectItem key={ project.key } id={ project.key } name={ project.item.name } description={ project.item.description } iconSrc={ `/projects/${ project.item.icon }` } />
+						))
+					}
 				</div>
 			</ContentContainer>
 		</div>
@@ -26,13 +30,13 @@ async function getStaticProps() {
 			return {
 				props: {
 					status: response.status,
-					projects: [] as IProjectItemsKeyData[]
+					projects: [] as IProjectItemKeyData[]
 				},
 				revalidate: 43200
 			};
 		}
 
-		const data = response.data.data as IProjectItemsKeyData[];
+		const data = response.data.data as IProjectItemKeyData[];
 
 		return {
 			props: {
@@ -43,6 +47,8 @@ async function getStaticProps() {
 		};
 	}
 	catch (e) {
+		/* TODO: handle Axios related errors */
+
 		if(e instanceof Error) {
 			throw e;
 		}
