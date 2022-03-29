@@ -211,7 +211,9 @@ module.exports = {
 		} ],
 		"react/jsx-first-prop-new-line": [ "warn", "multiline-multiprop" ],
 		"react/jsx-indent": [ "warn", "tab" ],
-		"react/jsx-pascal-case": "error",
+		"react/jsx-pascal-case": [ "error", {
+			"allowAllCaps": true
+		} ],
 		"react/jsx-props-no-multi-spaces": "warn",
 		"react/jsx-tag-spacing": [ "warn", {
 			"closingSlash": "never",
