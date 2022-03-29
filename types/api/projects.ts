@@ -1,7 +1,8 @@
-import { IProjectItemKeyData, IProjectItemData } from "../project-item";
+import { IProjectItemData } from "../project-item";
 import { IMessageData } from "./message";
 
-export interface IProjectItemDetailData extends IProjectItemKeyData {
+export interface IProjectItemDetailData extends IProjectItemData {
+	key: string;
 	dateAdded: Date | string;
 }
 
