@@ -13,6 +13,12 @@ export interface IProjectItemData {
   }[];
 }
 
-export interface IProjectItemKeyData extends IProjectItemData {
-  key: string;
+export interface IProjectItemKeyData {
+  key: number;
+  data: IProjectItemData;
+}
+
+export interface IProjectItemsKeyData {
+  key: number;
+  data: IProjectItemData[];
 }
