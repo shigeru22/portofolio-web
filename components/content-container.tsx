@@ -13,11 +13,11 @@ function ContentContainer({ onBackClick, children }: IContentContainerProps) {
 		<>
 			{
 				typeof(onBackClick) !== "undefined" &&
-				<div className={ `relative flex ${ !isHovered && "border-l-2" } border-light-0` }>
+				<div className="flex h-16">
 					<div className="flex justify-end w-0.5 h-full">
-						<div className="bg-light-0" style={ { width: isHovered ? "0%" : "100%" } } />
+						<div className="h-full bg-light-0" style={ { width: isHovered ? "0%" : "100%" } } />
 					</div>
-					<div className="flex min-w-50 h-16">
+					<div className="flex min-w-50 h-full">
 						<button type="button" onMouseOver={ () => setHovered(true) } onMouseOut={ () => setHovered(false) } onClick={ onBackClick } className={ `flex items-center gap-x-4 px-6 py-4 ${ isHovered && "bg-light-0" }` }>
 							<div className="h-9 aspect-square">
 								<ChevronLeftIcon className={ `h-9 stroke-1 ${ !isHovered ? "stroke-light-0" : "stroke-white" } aspect-square` } />
