@@ -1,5 +1,4 @@
 import { GetStaticPropsContext, InferGetServerSidePropsType } from "next";
-import { useRouter } from "next/router";
 import axios from "axios";
 import SVG from "react-inlinesvg";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
@@ -12,13 +11,11 @@ import { IProjectItemKeyData } from "../../types/project-item";
 function PortfolioDetails({ project }: InferGetServerSidePropsType<typeof getStaticProps>) {
 	/* TODO: implement null (not found) project */
 
-	const router = useRouter();
-
 	return (
 		<div className="w-full h-full px-8">
 			{
 				project !== null &&
-				<ContentContainer onBackClick={ () => router.push("/portfolio") }>
+				<ContentContainer backHref="/portfolio">
 					<div className="space-y-2">
 						<div className="flex items-center gap-x-4">
 							<h1 className="font-semibold text-4xl text-light-0">{ project.item.name }</h1>
