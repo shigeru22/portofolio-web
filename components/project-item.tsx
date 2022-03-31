@@ -28,7 +28,7 @@ function ProjectItem({ id, name, description, iconSrc }: IProjectItemProps) {
 					}) }
 					className={ `flex items-center gap-x-4 h-full px-6 ${ isHovered && "bg-light-0" }` }>
 					<div className="relative h-20 aspect-square">
-						<Image src={ iconSrc } alt={ `${ name } icon` } layout="fill" />
+						<Image src={ iconSrc } alt={ `${ name } icon` } layout="fill" className={ `${ !isHovered && "-z-10" }` } />
 					</div>
 					<div className={ `${ !isHovered && "hidden" } flex flex-col gap-y-1` }>
 						<h3 className={ `font-semibold text-left text-2xl ${ isHovered && "text-white" } leading-tight` }>{ name }</h3>
