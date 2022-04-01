@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { MenuAlt4Icon, XIcon } from "@heroicons/react/outline";
 
@@ -9,13 +9,30 @@ interface INavbarProps {
 function Navbar({ active }: INavbarProps) {
 	const [ isNavbarOpened, setNavbarOpened ] = useState(false);
 
+	const rootDiv = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		function onResize() {
+			if(rootDiv.current) {
+				rootDiv.current.style.minHeight = `${ window.innerHeight }px`;
+			}
+		}
+
+		onResize();
+		window.addEventListener("resize", onResize);
+
+		return () => {
+			window.removeEventListener("resize", onResize);
+		};
+	});
+
 	function onNavbarItemClick() {
 		setNavbarOpened(false);
 	}
 
 	return (
 		<>
-			<div className="absolute top-0 right-0 mr-8 mt-8 z-10">
+			<div className="fixed top-0 right-0 mr-8 mt-8 z-10">
 				<button type="button" onClick={ () => setNavbarOpened(!isNavbarOpened) }>
 					{
 						!isNavbarOpened
@@ -26,7 +43,7 @@ function Navbar({ active }: INavbarProps) {
 			</div>
 			{
 				isNavbarOpened &&
-				<div className="absolute h-screen w-screen bg-white bg-opacity-90">
+				<div ref={ rootDiv } className="fixed top-0 w-screen bg-white bg-opacity-90">
 					<div className="absolute bottom-0 left-0">
 						<div className="flex flex-col gap-y-4 h-56 pl-6 ml-8 border-l-2 border-light-0">
 							<Link href="/" passHref>
