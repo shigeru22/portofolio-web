@@ -9,7 +9,7 @@ function Portfolio({ projects }: InferGetStaticPropsType<typeof getStaticProps>)
 	return (
 		<div className="w-full h-full px-8 space-y-4">
 			<ContentContainer>
-				<h1 className="text-center font-semibold text-4xl text-light-0">Portfolio</h1>
+				<h1 className="text-center font-semibold text-3xl text-light-0">Portfolio</h1>
 				<div className="flex flex-col gap-y-2">
 					{
 						projects.map(project => (

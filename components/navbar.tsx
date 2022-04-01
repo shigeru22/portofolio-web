@@ -45,15 +45,15 @@ function Navbar({ active }: INavbarProps) {
 				isNavbarOpened &&
 				<div ref={ rootDiv } className="fixed top-0 w-screen bg-white bg-opacity-90">
 					<div className="absolute bottom-0 left-0">
-						<div className="flex flex-col gap-y-4 h-56 pl-6 ml-8 border-l-2 border-light-0">
+						<div className="flex flex-col gap-y-6 h-56 pl-6 ml-8 border-l-2 border-light-0">
 							<Link href="/" passHref>
-								<a onClick={ () => onNavbarItemClick() } className={ `font-medium text-4xl ${ active === "home" ? "text-light-0 " : "text-light-20" } cursor-pointer` }>Home</a>
+								<a onClick={ () => onNavbarItemClick() } className={ `font-medium text-3xl ${ active === "home" ? "text-light-0 " : "text-light-20" } cursor-pointer` }>Home</a>
 							</Link>
 							<Link href="/portfolio" passHref>
-								<a onClick={ () => onNavbarItemClick() } className={ `font-medium text-4xl ${ active === "portfolio" ? "text-light-0 " : "text-light-20" } cursor-pointer` }>Portfolio</a>
+								<a onClick={ () => onNavbarItemClick() } className={ `font-medium text-3xl ${ active === "portfolio" ? "text-light-0 " : "text-light-20" } cursor-pointer` }>Portfolio</a>
 							</Link>
 							<Link href="/about" passHref>
-								<a onClick={ () => onNavbarItemClick() } className={ `font-medium text-4xl ${ active === "about" ? "text-light-0 " : "text-light-20" } cursor-pointer` }>About</a>
+								<a onClick={ () => onNavbarItemClick() } className={ `font-medium text-3xl ${ active === "about" ? "text-light-0 " : "text-light-20" } cursor-pointer` }>About</a>
 							</Link>
 						</div>
 					</div>

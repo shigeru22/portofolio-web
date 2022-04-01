@@ -78,8 +78,8 @@ function About() {
 	return (
 		<div className="w-full h-full px-8">
 			<ContentContainer>
-				<h2 className="font-medium text-4xl leading-normal">Just a guy of nothing. Really.</h2>
-				<p className="text-2xl text-light-0 leading-normal">
+				<h2 className="font-medium text-3xl leading-normal">Just a guy of nothing. Really.</h2>
+				<p className="text-xl text-light-0 leading-normal">
 					I&apos;m Jeremy Yonathan, mostly known as my usual nickname Shigeru, Kyuu, or whatever. Currently majoring in Informatics at Universitas Multimedia Nusantara.
 					<br />
 					I&apos;m highly passionate in developing and learning about technology. Most commonly in .NET (C#) including Unity and WPF, and web applications using PHP and Node.js.
@@ -101,10 +101,10 @@ function About() {
 					<LanguageGraph data={ languages } />
 				</div>
 				<div className="space-y-2">
-					<p className="text-2xl text-light-0 leading-normal">
+					<p className="text-xl text-light-0 leading-normal">
 						You may contact me using the links below. Either to say hi, or just for a random chat!
 					</p>
-					<p className="text-lg text-light-0 leading-snug">
+					<p className="text-light-0 leading-snug">
 						*Note that I&apos;m actually hard at communication though :]
 					</p>
 				</div>
@@ -115,7 +115,7 @@ function About() {
 						<Button iconSlug="github" label="GitHub" />
 					</div>
 				</div>
-				<div className="flex justify-center w-full pt-2">
+				<div className="flex justify-center w-full py-8">
 					<SVG src="/kyuu.svg" className="h-12 fill-light-20 aspect-square" />
 				</div>
 			</ContentContainer>
