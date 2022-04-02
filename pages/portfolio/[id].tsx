@@ -19,10 +19,12 @@ function PortfolioDetails({ project }: InferGetServerSidePropsType<typeof getSta
 					<div className="space-y-2">
 						<div className="flex items-center gap-x-4">
 							<h1 className="font-semibold text-3xl text-light-0">{ project.item.name }</h1>
-							<div className="flex items-top gap-x-1 h-6">
-								<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 fill-black aspect-square" />
-								<ExternalLinkIcon className="h-3 stroke-light-0 aspect-square" />
-							</div>
+							<a href={ project.item.projectLink } target="_blank" rel="noreferrer">
+								<div className="flex items-top gap-x-1 h-6">
+									<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 fill-black aspect-square" />
+									<ExternalLinkIcon className="h-3 stroke-light-0 aspect-square" />
+								</div>
+							</a>
 						</div>
 						<h2 className="font-medium text-xl text-light-20">{ project.item.description }</h2>
 						<div className="flex gap-x-4">
