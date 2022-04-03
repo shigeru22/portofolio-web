@@ -48,26 +48,26 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 						<ContentContainer backHref="/portfolio" backLabel="Portfolio">
 							<div className="space-y-2">
 								<div className="flex items-center gap-x-4">
-									<h1 className="font-semibold text-3xl text-light-0">{ project.item.name }</h1>
+									<h1 className="font-semibold text-3xl md:text-4xl text-light-0">{ project.item.name }</h1>
 									<a href={ project.item.projectLink } target="_blank" rel="noreferrer">
-										<div className="flex items-top gap-x-1 h-6">
-											<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 fill-black aspect-square" />
-											<ExternalLinkIcon className="h-3 stroke-light-0 aspect-square" />
+										<div className="flex items-top gap-x-1 h-6 md:h-8">
+											<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 md:h-8 fill-black aspect-square" />
+											<ExternalLinkIcon className="h-3 md:h-4 stroke-light-0 aspect-square" />
 										</div>
 									</a>
 								</div>
 								<h2 className="font-medium text-xl text-light-20">{ project.item.description }</h2>
-								<div className="flex gap-x-4">
+								<div className="flex gap-x-3 md:gap-x-4">
 									{
 										project.item.technologies.map((item, index) => (
 										// eslint-disable-next-line react/no-array-index-key
-											<SVG key={ index } src={ getSimpleIconLink("jsdelivr", item) } className="h-6 fill-black aspect-square" />
+											<SVG key={ index } src={ getSimpleIconLink("jsdelivr", item) } className="h-6 md:h-8 fill-black aspect-square" />
 										))
 									}
 								</div>
 							</div>
 							<div className="space-y-2">
-								<p className="text-xl text-light-0 whitespace-pre-wrap">{ project.item.longDescription }</p>
+								<p className="text-xl md:text-2xl text-light-0 whitespace-pre-wrap">{ project.item.longDescription }</p>
 								<div className="w-full overflow-x-auto">
 									<div className="flex py-2 gap-x-2 w-max">
 										{
@@ -161,8 +161,6 @@ async function getStaticProps(context: GetStaticPropsContext) {
 		};
 	}
 	catch (e) {
-		/* TODO: handle Axios related errors */
-
 		if(axios.isAxiosError(e)) {
 			return {
 				props: {

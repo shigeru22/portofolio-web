@@ -7,15 +7,17 @@ import { IProjectItemKeyData } from "../../types/project-item";
 
 function Portfolio({ projects }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
-		<div className="w-full h-full px-8 space-y-4">
+		<div className="flex flex-col flex-grow w-full h-full px-8">
 			<ContentContainer>
-				<h1 className="text-center font-semibold text-3xl text-light-0">Portfolio</h1>
-				<div className="flex flex-col gap-y-2">
-					{
-						projects.map(project => (
-							<ProjectItem key={ project.key } id={ project.key } name={ project.item.name } description={ project.item.description } iconSrc={ `/projects/${ project.item.icon }` } />
-						))
-					}
+				<div className="flex flex-col justify-center items-center w-full space-y-4 md:space-y-6">
+					<h1 className="text-center font-semibold text-3xl md:text-4xl text-light-0">Portfolio</h1>
+					<div className="flex md:grid flex-col grid-cols-2 gap-x-2 gap-y-2">
+						{
+							projects.map(project => (
+								<ProjectItem key={ project.key } id={ project.key } name={ project.item.name } description={ project.item.description } iconSrc={ `/projects/${ project.item.icon }` } />
+							))
+						}
+					</div>
 				</div>
 			</ContentContainer>
 		</div>

@@ -69,17 +69,17 @@ function ScreenshotModal({ src, alt, description, currentIndex, maxIndex, onArro
 									onLoadingComplete={ dimen => setRatio(dimen.naturalWidth / dimen.naturalHeight) } />
 							</div>
 							<div className="flex justify-between items-center h-8">
-								<div className="h-8 aspect-square">
+								<div className="h-8 md:h-10 aspect-square">
 									<button type="button" onClick={ () => changeScreenshot(ChangeScreenshotType.DECREMENT) } className={ `${ currentIndex === 0 && "hidden" } w-full h-full p-1 hover:bg-light-0` }>
-										<ChevronLeftIcon className="h-6 stroke-light-0 hover:stroke-white aspect-square z-20" />
+										<ChevronLeftIcon className="h-6 md:h-8 stroke-light-0 hover:stroke-white aspect-square z-20" />
 									</button>
 								</div>
 								<div className="flex-grow">
-									<h3 className="font-medium text-center text-xl text-light-0">{ description }</h3>
+									<h3 className="font-medium text-center text-xl md:text-2xl text-light-0">{ description }</h3>
 								</div>
-								<div className="h-8 aspect-square">
+								<div className="h-8 md:h-10 aspect-square">
 									<button type="button" onClick={ () => changeScreenshot(ChangeScreenshotType.INCREMENT) } className={ `${ currentIndex === maxIndex - 1 && "hidden" } w-full h-full p-1 hover:bg-light-0` }>
-										<ChevronRightIcon className="h-6 stroke-light-0 hover:stroke-white aspect-square z-20" />
+										<ChevronRightIcon className="h-6 md:h-8 stroke-light-0 hover:stroke-white aspect-square z-20" />
 									</button>
 								</div>
 							</div>

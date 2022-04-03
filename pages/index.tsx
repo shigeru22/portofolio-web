@@ -8,7 +8,7 @@ function Home() {
 				<ProfilePicture src="/profpic.jpg" />
 			</div>
 			<div className="flex justify-center items-center w-full py-8">
-				<p className="font-medium text-lg text-light-20">
+				<p className="font-medium text-lg md:text-xl text-light-20">
 					Profile picture by <a href={ Config.img.link } className="text-light-0" target="_blank" rel="noreferrer">{ Config.img.creator }</a>.
 				</p>
 			</div>

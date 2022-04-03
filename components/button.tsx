@@ -22,7 +22,7 @@ function Button({ iconSlug, iconSource, label, onClick }: IButtonProps) {
 					<div className="h-9 aspect-square">
 						<SVG src={ typeof(iconSource) === "undefined" || iconSource === "simpleicon" ? getSimpleIconLink("jsdelivr", iconSlug) : iconSlug } className={ `w-9 h-9 ${ isHovered ? "fill-white" : "fill-black" }` } />
 					</div>
-					<span className={ `${ !isHovered && "md:hidden" } font-semibold text-2xl ${ isHovered && "text-white" }` }>{ label }</span>
+					<span className={ `${ !isHovered && "lg:invisible" } font-semibold text-2xl ${ isHovered && "text-white" }` }>{ label }</span>
 				</button>
 			</div>
 		</div>

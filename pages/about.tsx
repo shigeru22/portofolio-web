@@ -79,33 +79,33 @@ function About() {
 	return (
 		<div className="w-full h-full px-8">
 			<ContentContainer>
-				<h2 className="font-medium text-3xl leading-normal">Just a guy of nothing. Really.</h2>
-				<p className="text-xl text-light-0 leading-normal">
+				<h2 className="font-medium text-3xl md:text-4xl leading-normal">Just a guy of nothing. Really.</h2>
+				<p className="text-xl md:text-2xl text-light-0 leading-normal">
 					I&apos;m Jeremy Yonathan, mostly known as my usual nickname Shigeru, Kyuu, or whatever. Currently majoring in Informatics at Universitas Multimedia Nusantara.
 					<br />
 					I&apos;m highly passionate in developing and learning about technology. Most commonly in .NET (C#) including Unity and WPF, and web applications using PHP and Node.js.
 				</p>
 				<div className="space-y-2">
-					<h3 className="font-medium text-lg text-light-0">Commonly used technologies:</h3>
-					<div className="flex gap-x-3 flex-wrap">
+					<h3 className="font-medium text-lg md:text-xl text-light-0">Commonly used technologies:</h3>
+					<div className="flex gap-x-3 md:gap-x-4 flex-wrap">
 						{
 							technologySlugs.map(item => (
-								<div key={ item.id } className="h-6 aspect-square">
-									<SVG src={ getSimpleIconLink("jsdelivr", item.slug) } className="h-6 fill-black aspect-square" />
+								<div key={ item.id } className="h-6 md:h-8 aspect-square">
+									<SVG src={ getSimpleIconLink("jsdelivr", item.slug) } className="h-6 md:h-8 fill-black aspect-square" />
 								</div>
 							))
 						}
 					</div>
 				</div>
 				<div className="space-y-2">
-					<h3 className="font-medium text-lg text-light-0">Languages:</h3>
+					<h3 className="font-medium text-lg md:text-xl text-light-0">Languages:</h3>
 					<LanguageGraph data={ languages } />
 				</div>
 				<div className="space-y-2">
-					<p className="text-xl text-light-0 leading-normal">
+					<p className="text-xl md:text-2xl text-light-0 leading-normal">
 						You may contact me using the links below. Either to say hi, or just for a random chat!
 					</p>
-					<p className="text-light-0 leading-snug">
+					<p className="md:text-lg text-light-0 leading-snug">
 						*Note that I&apos;m actually hard at communication though :]
 					</p>
 				</div>

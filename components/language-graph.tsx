@@ -19,7 +19,7 @@ function LanguageGraph({ data }: ILanguageGraphProps) {
 		}
 
 		return (
-			<div className="flex flex-col gap-y-2 w-14 h-full">
+			<div className="flex flex-col gap-y-2 w-14 h-full border-b-2 border-light-0">
 				<div className="flex flex-grow justify-center items-end">
 					<div className="w-2 bg-light-20" style={ { height: `${ heightPercentage }%` } } />
 				</div>
@@ -31,7 +31,7 @@ function LanguageGraph({ data }: ILanguageGraphProps) {
 	}
 
 	return (
-		<div className="flex h-48 border-b-2 border-light-0">
+		<div className="flex h-48">
 			{
 				data.map(item => (
 					<GraphItem key={ item.id } percentage={ item.percentage } label={ item.label } />

@@ -26,13 +26,13 @@ function ContentContainer({ backHref, backLabel, flexMode, children }: IContentC
 								<div className="h-9 aspect-square">
 									<ChevronLeftIcon className={ `h-9 stroke-1 ${ !isHovered ? "stroke-light-0" : "stroke-white" } aspect-square` } />
 								</div>
-								<span className={ `${ !isHovered && "md:hidden" } font-semibold text-2xl ${ isHovered && "text-white" }` }>{ typeof(backLabel) !== "undefined" ? backLabel : "Back" }</span>
+								<span className={ `${ !isHovered && "lg:invisible" } font-semibold text-2xl ${ isHovered && "text-white" }` }>{ typeof(backLabel) !== "undefined" ? backLabel : "Back" }</span>
 							</button>
 						</Link>
 					</div>
 				</div>
 			}
-			<div className={ `${ flexMode && "flex flex-col" } flex-grow min-h-full w-full space-y-4 pl-6 pt-2 pb-4 border-l-2 border-light-0` }>
+			<div className={ `${ flexMode && "flex flex-col" } flex-grow min-h-full w-full space-y-4 md:space-y-6 pl-6 pt-2 pb-4 border-l-2 border-light-0` }>
 				{ children }
 			</div>
 		</>

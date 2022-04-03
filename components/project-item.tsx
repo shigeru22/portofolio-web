@@ -23,9 +23,9 @@ function ProjectItem({ id, name, description, iconSrc }: IProjectItemProps) {
 						<div className="relative h-12 aspect-square">
 							<Image src={ iconSrc } alt={ `${ name } icon` } layout="fill" className={ `${ !isHovered && "-z-10" }` } />
 						</div>
-						<div className={ `${ !isHovered && "md:hidden" } flex flex-col gap-y-1` }>
-							<h3 className={ `font-semibold text-left text-xl ${ !isHovered ? "text-light-0" : "text-white" } leading-tight` }>{ name }</h3>
-							<h4 className={ `text-left ${ !isHovered ? "text-light-0" : "text-white" } leading-tight` }>{ description }</h4>
+						<div className={ `${ !isHovered && "lg:invisible" } flex flex-col gap-y-1` }>
+							<h3 className={ `font-semibold text-left text-xl md:text-2xl ${ !isHovered ? "text-light-0" : "text-white" } leading-tight md:leading-tight` }>{ name }</h3>
+							<h4 className={ `text-left md:text-lg ${ !isHovered ? "text-light-0" : "text-white" } leading-tight md:leading-none` }>{ description }</h4>
 						</div>
 					</button>
 				</Link>
