@@ -4,10 +4,11 @@ import { ChevronLeftIcon } from "@heroicons/react/outline";
 
 interface IContentContainerProps {
 	backHref?: string;
+	backLabel?: string;
 	children: JSX.Element | JSX.Element[];
 }
 
-function ContentContainer({ backHref, children }: IContentContainerProps) {
+function ContentContainer({ backHref, backLabel, children }: IContentContainerProps) {
 	const [ isHovered, setHovered ] = useState(false);
 
 	return (
@@ -24,7 +25,7 @@ function ContentContainer({ backHref, children }: IContentContainerProps) {
 								<div className="h-9 aspect-square">
 									<ChevronLeftIcon className={ `h-9 stroke-1 ${ !isHovered ? "stroke-light-0" : "stroke-white" } aspect-square` } />
 								</div>
-								<span className={ `${ !isHovered && "hidden" } font-semibold text-2xl ${ isHovered && "text-white" }` }>Back</span>
+								<span className={ `${ !isHovered && "md:hidden" } font-semibold text-2xl ${ isHovered && "text-white" }` }>{ typeof(backLabel) !== "undefined" ? backLabel : "Back" }</span>
 							</button>
 						</Link>
 					</div>

@@ -43,7 +43,7 @@ function PortfolioDetails({ project }: InferGetServerSidePropsType<typeof getSta
 				{
 					project !== null &&
 					<>
-						<ContentContainer backHref="/portfolio">
+						<ContentContainer backHref="/portfolio" backLabel="Portfolio">
 							<div className="space-y-2">
 								<div className="flex items-center gap-x-4">
 									<h1 className="font-semibold text-3xl text-light-0">{ project.item.name }</h1>
