@@ -5,10 +5,11 @@ import { ChevronLeftIcon } from "@heroicons/react/outline";
 interface IContentContainerProps {
 	backHref?: string;
 	backLabel?: string;
+	flexMode?: boolean;
 	children: JSX.Element | JSX.Element[];
 }
 
-function ContentContainer({ backHref, backLabel, children }: IContentContainerProps) {
+function ContentContainer({ backHref, backLabel, flexMode, children }: IContentContainerProps) {
 	const [ isHovered, setHovered ] = useState(false);
 
 	return (
@@ -31,7 +32,7 @@ function ContentContainer({ backHref, backLabel, children }: IContentContainerPr
 					</div>
 				</div>
 			}
-			<div className="flex-grow min-h-full w-full space-y-4 pl-6 pt-2 pb-4 border-l-2 border-light-0">
+			<div className={ `${ flexMode && "flex flex-col" } flex-grow min-h-full w-full space-y-4 pl-6 pt-2 pb-4 border-l-2 border-light-0` }>
 				{ children }
 			</div>
 		</>

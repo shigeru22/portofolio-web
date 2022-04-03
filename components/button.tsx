@@ -4,11 +4,12 @@ import { getSimpleIconLink } from "../utils/simple-icons";
 
 interface IButtonProps {
 	iconSlug: string;
+	iconSource?: "simpleicon" | "url";
 	label: string;
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-function Button({ iconSlug, label, onClick }: IButtonProps) {
+function Button({ iconSlug, iconSource, label, onClick }: IButtonProps) {
 	const [ isHovered, setHovered ] = useState(false);
 
 	return (
@@ -16,10 +17,10 @@ function Button({ iconSlug, label, onClick }: IButtonProps) {
 			<div className="flex justify-end w-0.5 h-full">
 				<div className="bg-light-0" style={ { width: isHovered ? "0%" : "100%" } } />
 			</div>
-			<div className="flex min-w-50 h-16">
+			<div className="flex h-16">
 				<button type="button" onMouseOver={ () => setHovered(true) } onMouseOut={ () => setHovered(false) } onClick={ onClick } className={ `flex items-center gap-x-4 px-6 py-4 ${ isHovered && "bg-light-0" }` }>
 					<div className="h-9 aspect-square">
-						<SVG src={ getSimpleIconLink("jsdelivr", iconSlug) } className={ `h-9 ${ isHovered ? "fill-white" : "fill-black" }` } />
+						<SVG src={ typeof(iconSource) === "undefined" || iconSource === "simpleicon" ? getSimpleIconLink("jsdelivr", iconSlug) : iconSlug } className={ `w-9 h-9 ${ isHovered ? "fill-white" : "fill-black" }` } />
 					</div>
 					<span className={ `${ !isHovered && "md:hidden" } font-semibold text-2xl ${ isHovered && "text-white" }` }>{ label }</span>
 				</button>

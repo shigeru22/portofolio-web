@@ -1,18 +1,20 @@
 import { useState, useContext } from "react";
 import { GetStaticPropsContext, InferGetServerSidePropsType } from "next";
+import Link from "next/link";
 import axios from "axios";
 import SVG from "react-inlinesvg";
-import { ExternalLinkIcon } from "@heroicons/react/outline";
+import { EmojiSadIcon, ExternalLinkIcon } from "@heroicons/react/outline";
 import ContentContainer from "../../components/content-container";
 import Screenshot from "../../components/screenshot";
 import ScreenshotModal from "../../components/screenshot-modal";
+import Button from "../../components/button";
 import { HTTPStatus } from "../../utils/http";
 import { getSimpleIconLink } from "../../utils/simple-icons";
 import { context } from "../_app";
 import { IProjectItemKeyData } from "../../types/project-item";
 import { TargetComponent } from "../../types/context";
 
-function PortfolioDetails({ project }: InferGetServerSidePropsType<typeof getStaticProps>) {
+function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeof getStaticProps>) {
 	/* TODO: implement null (not found) project */
 
 	const { navbarProps, setNavbarProps } = useContext(context);
@@ -41,7 +43,7 @@ function PortfolioDetails({ project }: InferGetServerSidePropsType<typeof getSta
 		<>
 			<div className="flex flex-col flex-grow w-full px-8">
 				{
-					project !== null &&
+					(status === HTTPStatus.OK && project !== null) &&
 					<>
 						<ContentContainer backHref="/portfolio" backLabel="Portfolio">
 							<div className="space-y-2">
@@ -89,6 +91,30 @@ function PortfolioDetails({ project }: InferGetServerSidePropsType<typeof getSta
 							onArrowClick={ changeScreenshot } />
 					</>
 				}
+				{
+					(status !== HTTPStatus.OK) &&
+					<>
+						<ContentContainer flexMode>
+							<div className="flex justify-center items-center flex-grow w-full">
+								<div className="flex flex-col justify-center items-center gap-y-4">
+									<EmojiSadIcon className="h-16 aspect-square stroke-1 stroke-light-0" />
+									<h3 className="font-medium text-2xl text-light-0">
+										{
+											status === HTTPStatus.NOT_FOUND
+												? "Item not found."
+												: "Data error occurred."
+										}
+									</h3>
+									<Link href="/" passHref>
+										<div className="h-16">
+											<Button iconSlug="/kyuu.svg" iconSource="url" label="Home" />
+										</div>
+									</Link>
+								</div>
+							</div>
+						</ContentContainer>
+					</>
+				}
 			</div>
 		</>
 	);
@@ -125,16 +151,6 @@ async function getStaticProps(context: GetStaticPropsContext) {
 		const id = typeof(context.params) !== "undefined" ? context.params.id : "0";
 		const response = await axios.get(`${ process.env.API_HOST }/projects/${ id }`);
 
-		if(response.status !== HTTPStatus.OK) {
-			return {
-				props: {
-					status: response.status,
-					project: null
-				},
-				revalidate: 43200
-			};
-		}
-
 		const data = response.data.data as IProjectItemKeyData;
 		return {
 			props: {
@@ -147,7 +163,16 @@ async function getStaticProps(context: GetStaticPropsContext) {
 	catch (e) {
 		/* TODO: handle Axios related errors */
 
-		if(e instanceof Error) {
+		if(axios.isAxiosError(e)) {
+			return {
+				props: {
+					status: e.response !== undefined ? e.response.status : 500,
+					project: null
+				},
+				revalidate: 43200
+			};
+		}
+		else if(e instanceof Error) {
 			throw e;
 		}
 		else {
