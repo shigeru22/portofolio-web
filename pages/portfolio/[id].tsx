@@ -39,60 +39,57 @@ function PortfolioDetails({ project }: InferGetServerSidePropsType<typeof getSta
 
 	return (
 		<>
-			{
-				typeof(project?.item.screenshots) !== "undefined" &&
-				<>
-					<div className="w-full h-full px-8">
-						{
-							project !== null &&
-							<ContentContainer backHref="/portfolio">
-								<div className="space-y-2">
-									<div className="flex items-center gap-x-4">
-										<h1 className="font-semibold text-3xl text-light-0">{ project.item.name }</h1>
-										<a href={ project.item.projectLink } target="_blank" rel="noreferrer">
-											<div className="flex items-top gap-x-1 h-6">
-												<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 fill-black aspect-square" />
-												<ExternalLinkIcon className="h-3 stroke-light-0 aspect-square" />
-											</div>
-										</a>
-									</div>
-									<h2 className="font-medium text-xl text-light-20">{ project.item.description }</h2>
-									<div className="flex gap-x-4">
+			<div className="flex flex-col flex-grow w-full px-8">
+				{
+					project !== null &&
+					<>
+						<ContentContainer backHref="/portfolio">
+							<div className="space-y-2">
+								<div className="flex items-center gap-x-4">
+									<h1 className="font-semibold text-3xl text-light-0">{ project.item.name }</h1>
+									<a href={ project.item.projectLink } target="_blank" rel="noreferrer">
+										<div className="flex items-top gap-x-1 h-6">
+											<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 fill-black aspect-square" />
+											<ExternalLinkIcon className="h-3 stroke-light-0 aspect-square" />
+										</div>
+									</a>
+								</div>
+								<h2 className="font-medium text-xl text-light-20">{ project.item.description }</h2>
+								<div className="flex gap-x-4">
+									{
+										project.item.technologies.map((item, index) => (
+										// eslint-disable-next-line react/no-array-index-key
+											<SVG key={ index } src={ getSimpleIconLink("jsdelivr", item) } className="h-6 fill-black aspect-square" />
+										))
+									}
+								</div>
+							</div>
+							<div className="space-y-2">
+								<p className="text-xl text-light-0 whitespace-pre-wrap">{ project.item.longDescription }</p>
+								<div className="w-full overflow-x-auto">
+									<div className="flex py-2 gap-x-2 w-max">
 										{
-											project.item.technologies.map((item, index) => (
-												// eslint-disable-next-line react/no-array-index-key
-												<SVG key={ index } src={ getSimpleIconLink("jsdelivr", item) } className="h-6 fill-black aspect-square" />
+											project.item.screenshots.map((item, index) => (
+											// eslint-disable-next-line react/no-array-index-key
+												<button key={ index } type="button" onClick={ () => onScreenshotClick(index) }>
+													<Screenshot src={ item.image } alt={ item.description } priority={ index === 0 } />
+												</button>
 											))
 										}
 									</div>
 								</div>
-								<div className="space-y-2">
-									<p className="text-xl text-light-0 whitespace-pre-wrap">{ project.item.longDescription }</p>
-									<div className="w-full overflow-x-auto">
-										<div className="flex py-2 gap-x-2 w-max">
-											{
-												project.item.screenshots.map((item, index) => (
-													// eslint-disable-next-line react/no-array-index-key
-													<button key={ index } type="button" onClick={ () => onScreenshotClick(index) }>
-														<Screenshot src={ item.image } alt={ item.description } priority={ index === 0 } />
-													</button>
-												))
-											}
-										</div>
-									</div>
-								</div>
-							</ContentContainer>
-						}
-					</div>
-					<ScreenshotModal
-						src={ project.item.screenshots[activeScreenshotIndex].image }
-						alt={ project.item.screenshots[activeScreenshotIndex].description }
-						description={ project.item.screenshots[activeScreenshotIndex].description }
-						currentIndex={ activeScreenshotIndex }
-						maxIndex={ project.item.screenshots.length }
-						onArrowClick={ changeScreenshot } />
-				</>
-			}
+							</div>
+						</ContentContainer>
+						<ScreenshotModal
+							src={ project.item.screenshots[activeScreenshotIndex].image }
+							alt={ project.item.screenshots[activeScreenshotIndex].description }
+							description={ project.item.screenshots[activeScreenshotIndex].description }
+							currentIndex={ activeScreenshotIndex }
+							maxIndex={ project.item.screenshots.length }
+							onArrowClick={ changeScreenshot } />
+					</>
+				}
+			</div>
 		</>
 	);
 }
