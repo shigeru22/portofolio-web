@@ -49,6 +49,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 	try {
 		const fetchResult = (await db.get(req.query.id)) as unknown as IProjectItemDetailData;
 
+		if(fetchResult === null) {
+			const data: IMessageData = {
+				message: "Project with specified ID not found."
+			};
+
+			log(LogSeverity.LOG, `projects/${ req.query.id }/handler`, `Item with key ${ req.query.id } not found.`);
+			res.status(HTTPStatus.NOT_FOUND).json(data);
+			return;
+		}
+
 		const data: IProjectItemResponseData = {
 			message: "Data retrieved successfully.",
 			data: {
