@@ -4,6 +4,7 @@ import LanguageGraph from "../components/language-graph";
 import Button from "../components/button";
 import { getSimpleIconLink } from "../utils/simple-icons";
 import { ILanguageGraphData } from "../types/components/language-graph";
+import Config from "../config.json";
 
 interface ITechnologySlugs {
 	id: number;
@@ -110,9 +111,14 @@ function About() {
 				</div>
 				<div className="flex justify-center w-full">
 					<div className="flex flex-col gap-y-2">
-						<Button iconSlug="twitter" label="Twitter" />
-						<Button iconSlug="linkedin" label="LinkedIn" />
-						<Button iconSlug="github" label="GitHub" />
+						{
+							Config.links.map((link, index) => (
+								// eslint-disable-next-line react/no-array-index-key
+								<a key={ index } href={ link.link } target="_blank" rel="noreferrer">
+									<Button iconSlug={ link.iconSlug } label={ link.name } />
+								</a>
+							))
+						}
 					</div>
 				</div>
 				<div className="flex justify-center w-full py-8">

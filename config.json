@@ -4,5 +4,22 @@
   "img": {
     "link": "https://safebooru.org/index.php?page=post&s=view&id=1612415",
     "creator": "peko"
-  }
+  },
+  "links": [
+    {
+      "name": "Twitter",
+      "iconSlug": "twitter",
+      "link": "https://twitter.com/shigeru_22"
+    },
+    {
+      "name": "LinkedIn",
+      "iconSlug": "linkedin",
+      "link": "https://www.linkedin.com/in/jeremy-yonathan"
+    },
+    {
+      "name": "GitHub",
+      "iconSlug": "github",
+      "link": "https://github.com/shigeru22"
+    }
+  ]
 }

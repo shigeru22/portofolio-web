@@ -12,7 +12,7 @@ function Button({ iconSlug, label, onClick }: IButtonProps) {
 	const [ isHovered, setHovered ] = useState(false);
 
 	return (
-		<div className="flex">
+		<div className="flex h-full">
 			<div className="flex justify-end w-0.5 h-full">
 				<div className="bg-light-0" style={ { width: isHovered ? "0%" : "100%" } } />
 			</div>
