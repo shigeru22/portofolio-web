@@ -44,6 +44,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 		};
 	});
 
+	useEffect(() => {
+		if(rootDiv.current) {
+			const body = document.body;
+
+			if(navbarData.isDialogOpened) {
+				body.classList.add("overflow-hidden");
+			}
+			else {
+				body.classList.remove("overflow-hidden");
+				body.classList.length <= 0 && body.removeAttribute("class");
+			}
+		}
+	}, [ navbarData.isDialogOpened ]);
+
 	function getPath() {
 		switch(pathArray[1]) {
 			case "": return "home";
