@@ -85,7 +85,7 @@ function About() {
 					<br />
 					I&apos;m highly passionate in developing and learning about technology. Most commonly in .NET (C#) including Unity and WPF, and web applications using PHP and Node.js.
 				</p>
-				<div className="space-y-2">
+				<div className="space-y-2 2xl:space-y-4">
 					<h3 className="font-medium text-lg md:text-xl text-light-0">Commonly used technologies:</h3>
 					<div className="flex gap-x-3 md:gap-x-4 flex-wrap">
 						{
@@ -97,7 +97,7 @@ function About() {
 						}
 					</div>
 				</div>
-				<div className="space-y-2">
+				<div className="space-y-2 2xl:space-y-4">
 					<h3 className="font-medium text-lg md:text-xl text-light-0">Languages:</h3>
 					<LanguageGraph data={ languages } />
 				</div>
