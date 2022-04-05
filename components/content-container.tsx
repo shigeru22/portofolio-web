@@ -33,7 +33,7 @@ function ContentContainer({ backHref, backLabel, flexMode, children }: IContentC
 						</div>
 					</div>
 				}
-				<div className="flex-grow space-y-4 md:space-y-6 2xl:space-y-8 pl-6 2xl:pl-8 pb-4 border-l-2 border-light-0">
+				<div className="flex-grow space-y-4 md:space-y-6 2xl:space-y-8 pl-6 2xl:pl-8 py-4 border-l-2 border-light-0">
 					{ children }
 				</div>
 			</div>
