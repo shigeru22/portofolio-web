@@ -78,7 +78,7 @@ function About() {
 
 	return (
 		<div className="w-full h-full px-8">
-			<ContentContainer>
+			<ContentContainer flexMode>
 				<h2 className="font-medium text-3xl md:text-4xl leading-normal">Just a guy of nothing. Really.</h2>
 				<p className="text-xl md:text-2xl text-light-0 leading-normal">
 					I&apos;m Jeremy Yonathan, mostly known as my usual nickname Shigeru, Kyuu, or whatever. Currently majoring in Informatics at Universitas Multimedia Nusantara.

@@ -41,14 +41,14 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 
 	return (
 		<>
-			<div className="flex flex-col flex-grow w-full px-8">
+			<div className="w-full h-full px-8">
 				{
 					(status === HTTPStatus.OK && project !== null) &&
 					<>
-						<ContentContainer backHref="/portfolio" backLabel="Portfolio">
+						<ContentContainer backHref="/portfolio" backLabel="Portfolio" flexMode>
 							<div className="space-y-2">
-								<div className="flex items-center gap-x-4">
-									<h1 className="font-semibold text-3xl md:text-4xl text-light-0">{ project.item.name }</h1>
+								<div className="flex items-center gap-x-4 2xl:gap-x-6">
+									<h1 className="font-semibold text-3xl md:text-4xl 2xl:text-5xl text-light-0">{ project.item.name }</h1>
 									<a href={ project.item.projectLink } target="_blank" rel="noreferrer">
 										<div className="flex items-top gap-x-1 h-6 md:h-8">
 											<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 md:h-8 fill-black aspect-square" />
@@ -66,7 +66,7 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 									}
 								</div>
 							</div>
-							<div className="space-y-2">
+							<div className="space-y-2 md:space-y-4 2xl:space-y-8">
 								<p className="text-xl md:text-2xl text-light-0 whitespace-pre-wrap">{ project.item.longDescription }</p>
 								<div className="w-full overflow-x-auto">
 									<div className="flex py-2 gap-x-2 w-max">

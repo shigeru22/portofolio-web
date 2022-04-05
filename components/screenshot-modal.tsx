@@ -57,10 +57,10 @@ function ScreenshotModal({ src, alt, description, currentIndex, maxIndex, onArro
 				(navbarProps.isDialogOpened && navbarProps.target === TargetComponent.Screenshot) &&
 				<div ref={ rootDiv } className="fixed top-0 left-0 w-screen bg-white bg-opacity-90">
 					<div className="absolute h-1/2 bottom-0 left-0 -z-10">
-						<div className="flex flex-col gap-y-6 h-full px-6 ml-8 border-l-2 border-light-0" />
+						<div className="flex flex-col gap-y-6 h-full px-6 ml-8 md:ml-36 2xl:ml-56 border-l-2 border-light-0" />
 					</div>
-					<div className="flex items-center w-full h-full pr-8 mx-8">
-						<div className="flex flex-col gap-y-4 w-full pl-6 pr-8 border-l-2 border-light-0">
+					<div className="flex items-center w-full h-full pr-8 mx-8 md:mx-36 2xl:ml-56">
+						<div className="flex flex-col gap-y-4 w-full pl-6 pr-8 md:pr-64 2xl:pr-96 border-l-2 border-light-0">
 							<div className="relative w-full shadow-md" style={ { aspectRatio: ratio.toString() } }>
 								<Image
 									src={ `/projects/${ src }` }

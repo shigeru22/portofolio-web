@@ -80,16 +80,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<div className="sticky lg:hidden top-0 w-full">
 					<MobileNavbar iconSrc="/kyuu.svg" />
 				</div>
-				<div className="hidden lg:flex flex-col justify-between w-72 h-screen px-16 pt-14">
-					<SVG src="/kyuu.svg" className="w-12 h-12" />
-					<div className="flex flex-col gap-y-6 h-56 pl-6 border-l-2 border-light-0">
+				<div className="shrink-0 hidden lg:flex flex-col justify-between w-72 h-screen px-16 pt-14">
+					<SVG src="/kyuu.svg" className="w-12 2xl:w-16 h-12 2xl:h-16" />
+					<div className="flex flex-col gap-y-6 2xl:gap-y-8 h-56 2xl:h-64 pl-6 border-l-2 border-light-0">
 						<NavbarLinks active={ getPath() } />
 					</div>
 				</div>
-				<div className="flex flex-col flex-grow lg:h-screen overflow-y-auto">
+				<div className="flex flex-col flex-grow h-screen overflow-y-auto">
 					<Component { ...pageProps } />
 				</div>
-				<div className="lg:hidden">
+				<div>
 					<Navbar active={ getPath() } />
 				</div>
 			</div>
