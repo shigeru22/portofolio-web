@@ -59,9 +59,8 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 								<h2 className="font-medium text-xl text-light-20">{ project.item.description }</h2>
 								<div className="flex gap-x-3 md:gap-x-4">
 									{
-										project.item.technologies.map((item, index) => (
-										// eslint-disable-next-line react/no-array-index-key
-											<SVG key={ index } src={ getSimpleIconLink("jsdelivr", item) } className="h-6 md:h-8 fill-black aspect-square" />
+										project.item.technologies.map(item => (
+											<SVG key={ item } src={ getSimpleIconLink("jsdelivr", item) } className="h-6 md:h-8 fill-black aspect-square" />
 										))
 									}
 								</div>
@@ -72,8 +71,7 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 									<div className="flex py-2 gap-x-2 w-max">
 										{
 											project.item.screenshots.map((item, index) => (
-											// eslint-disable-next-line react/no-array-index-key
-												<button key={ index } type="button" onClick={ () => onScreenshotClick(index) }>
+												<button key={ item.description } type="button" onClick={ () => onScreenshotClick(index) }>
 													<Screenshot src={ item.image } alt={ item.description } priority={ index === 0 } />
 												</button>
 											))

@@ -112,9 +112,8 @@ function About() {
 				<div className="flex justify-center w-full">
 					<div className="flex flex-col gap-y-2">
 						{
-							Config.links.map((link, index) => (
-								// eslint-disable-next-line react/no-array-index-key
-								<a key={ index } href={ link.link } target="_blank" rel="noreferrer">
+							Config.links.map(link => (
+								<a key={ link.name } href={ link.link } target="_blank" rel="noreferrer">
 									<Button iconSlug={ link.iconSlug } label={ link.name } />
 								</a>
 							))
