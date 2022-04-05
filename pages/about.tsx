@@ -109,7 +109,7 @@ function About() {
 						*Note that I&apos;m actually hard at communication though :]
 					</p>
 				</div>
-				<div className="flex justify-center w-full">
+				<div className="flex justify-start w-full">
 					<div className="flex flex-col gap-y-2">
 						{
 							Config.links.map(link => (
