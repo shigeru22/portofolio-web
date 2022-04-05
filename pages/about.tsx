@@ -87,11 +87,11 @@ function About() {
 				</p>
 				<div className="space-y-2 2xl:space-y-4">
 					<h3 className="font-medium text-lg md:text-xl text-light-0">Commonly used technologies:</h3>
-					<div className="flex gap-x-3 md:gap-x-4 flex-wrap">
+					<div className="flex gap-x-3 md:gap-x-4 2xl:gap-x-6 flex-wrap">
 						{
 							technologySlugs.map(item => (
 								<div key={ item.id } className="h-6 md:h-8 aspect-square">
-									<SVG src={ getSimpleIconLink("jsdelivr", item.slug) } className="h-6 md:h-8 fill-black aspect-square" />
+									<SVG src={ getSimpleIconLink("jsdelivr", item.slug) } className="h-6 md:h-8 2xl:h-10 fill-black aspect-square" />
 								</div>
 							))
 						}
