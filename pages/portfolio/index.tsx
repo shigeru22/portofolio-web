@@ -11,7 +11,7 @@ function Portfolio({ projects }: InferGetStaticPropsType<typeof getStaticProps>)
 			<ContentContainer>
 				<div className="flex flex-col justify-center items-center w-full space-y-4 md:space-y-6">
 					<h1 className="text-center font-semibold text-3xl md:text-4xl text-light-0">Portfolio</h1>
-					<div className="flex md:grid flex-col grid-cols-2 gap-x-2 gap-y-2">
+					<div className="flex md:grid flex-col grid-cols-2 gap-x-2 gap-y-2 md:gap-y-4">
 						{
 							projects.map(project => (
 								<ProjectItem key={ project.key } id={ project.key } name={ project.item.name } description={ project.item.description } iconSrc={ `/projects/${ project.item.icon }` } />
