@@ -2,8 +2,10 @@ import "../styles/globals.css";
 import { useState, useEffect, useRef, createContext } from "react";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
-import MobileNavbar from "../components/mobile/navbar";
+import SVG from "react-inlinesvg";
 import Navbar from "../components/navbar";
+import NavbarLinks from "../components/navbar-links";
+import MobileNavbar from "../components/mobile/navbar";
 import { IContextProps, INavbarDataProps, TargetComponent } from "../types/context";
 
 const contextValues: IContextProps = {
@@ -74,14 +76,22 @@ function MyApp({ Component, pageProps }: AppProps) {
 			navbarProps: navbarData,
 			setNavbarProps: setNavbarData
 		} }>
-			<div ref={ rootDiv } className="flex flex-col w-screen">
-				<div className="sticky top-0 w-full">
+			<div ref={ rootDiv } className="flex flex-col lg:flex-row w-screen">
+				<div className="sticky lg:hidden top-0 w-full">
 					<MobileNavbar iconSrc="/kyuu.svg" />
 				</div>
-				<div className="flex flex-col flex-grow overflow-y-auto">
+				<div className="hidden lg:flex flex-col justify-between w-72 h-screen px-16 pt-14">
+					<SVG src="/kyuu.svg" className="w-12 h-12" />
+					<div className="flex flex-col gap-y-6 h-56 pl-6 border-l-2 border-light-0">
+						<NavbarLinks active={ getPath() } />
+					</div>
+				</div>
+				<div className="flex flex-col flex-grow lg:h-screen overflow-y-auto">
 					<Component { ...pageProps } />
 				</div>
-				<Navbar active={ getPath() } />
+				<div className="lg:hidden">
+					<Navbar active={ getPath() } />
+				</div>
 			</div>
 		</Provider>
 	);

@@ -13,7 +13,7 @@ function ContentContainer({ backHref, backLabel, flexMode, children }: IContentC
 	const [ isHovered, setHovered ] = useState(false);
 
 	return (
-		<>
+		<div className="lg:mt-14 h-full">
 			{
 				typeof(backHref) !== "undefined" &&
 				<div className="flex h-16">
@@ -35,7 +35,7 @@ function ContentContainer({ backHref, backLabel, flexMode, children }: IContentC
 			<div className={ `${ flexMode && "flex flex-col" } flex-grow min-h-full w-full space-y-4 md:space-y-6 pl-6 pt-2 pb-4 border-l-2 border-light-0` }>
 				{ children }
 			</div>
-		</>
+		</div>
 	);
 }
 
