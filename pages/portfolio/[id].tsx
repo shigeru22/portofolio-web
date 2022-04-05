@@ -56,7 +56,7 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 										</div>
 									</a>
 								</div>
-								<h2 className="font-medium text-xl text-light-20">{ project.item.description }</h2>
+								<h2 className="font-medium text-xl 2xl:text-2xl text-light-20">{ project.item.description }</h2>
 								<div className="flex gap-x-3 md:gap-x-4">
 									{
 										project.item.technologies.map(item => (
@@ -66,7 +66,7 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 								</div>
 							</div>
 							<div className="space-y-2 md:space-y-4 2xl:space-y-8">
-								<p className="text-xl md:text-2xl text-light-0 whitespace-pre-wrap">{ project.item.longDescription }</p>
+								<p className="text-xl 2xl:text-2xl text-light-0 whitespace-pre-wrap">{ project.item.longDescription }</p>
 								<div className="w-full overflow-x-auto">
 									<div className="flex py-2 gap-x-2 w-max">
 										{

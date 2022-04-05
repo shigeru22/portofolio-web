@@ -80,7 +80,7 @@ function About() {
 		<div className="w-full h-full px-8">
 			<ContentContainer flexMode>
 				<h2 className="font-medium text-3xl md:text-4xl leading-normal">Just a guy of nothing. Really.</h2>
-				<p className="text-xl md:text-2xl text-light-0 leading-normal">
+				<p className="text-xl 2xl:text-2xl text-light-0 leading-normal">
 					I&apos;m Jeremy Yonathan, mostly known as my usual nickname Shigeru, Kyuu, or whatever. Currently majoring in Informatics at Universitas Multimedia Nusantara.
 					<br />
 					I&apos;m highly passionate in developing and learning about technology. Most commonly in .NET (C#) including Unity and WPF, and web applications using PHP and Node.js.
@@ -102,10 +102,10 @@ function About() {
 					<LanguageGraph data={ languages } />
 				</div>
 				<div className="space-y-2">
-					<p className="text-xl md:text-2xl text-light-0 leading-normal">
+					<p className="text-xl 2xl:text-2xl text-light-0 leading-normal">
 						You may contact me using the links below. Either to say hi, or just for a random chat!
 					</p>
-					<p className="md:text-lg text-light-0 leading-snug">
+					<p className="2xl:text-lg text-light-0 leading-snug">
 						*Note that I&apos;m actually hard at communication though :]
 					</p>
 				</div>
