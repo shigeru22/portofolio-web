@@ -46,8 +46,8 @@ function Navbar({ active }: INavbarProps) {
 					<div>
 						{
 							!navbarProps.isDialogOpened
-								? <MenuAlt4Icon className="lg:hidden h-6 stroke-light-0 dark:stroke-dark-100" />
-								: <XIcon className="h-6 stroke-light-0 dark:stroke-dark-100" />
+								? <MenuAlt4Icon className="lg:hidden h-6 stroke-light-0 dark:stroke-white" />
+								: <XIcon className="h-6 stroke-light-0 dark:stroke-white" />
 						}
 					</div>
 				</button>
