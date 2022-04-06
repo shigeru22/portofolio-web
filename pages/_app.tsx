@@ -86,7 +86,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 						<NavbarLinks active={ getPath() } />
 					</div>
 				</div>
-				<div className="flex flex-col flex-grow h-screen overflow-y-auto">
+				<div className="flex flex-col flex-grow lg:h-screen overflow-y-auto">
 					<Component { ...pageProps } />
 				</div>
 				<div>
