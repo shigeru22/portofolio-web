@@ -75,7 +75,7 @@ function ScreenshotModal({ src, alt, description, currentIndex, maxIndex, onArro
 									</button>
 								</div>
 								<div className="flex-grow">
-									<h3 className="font-medium text-center text-xl md:text-2xl text-light-0 text-dark-100">{ description }</h3>
+									<h3 className="font-medium text-center text-xl md:text-2xl text-light-0 dark:text-dark-100">{ description }</h3>
 								</div>
 								<div className="h-8 md:h-10 aspect-square">
 									<button type="button" onClick={ () => changeScreenshot(ChangeScreenshotType.INCREMENT) } className={ `${ currentIndex === maxIndex - 1 && "hidden" } w-full h-full p-1 hover:bg-light-0 hover:dark:bg-dark-100` }>
