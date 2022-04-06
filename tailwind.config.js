@@ -3,9 +3,10 @@ module.exports = {
 		"./pages/**/*.{js,ts,jsx,tsx}",
 		"./components/**/*.{js,ts,jsx,tsx}"
 	],
+	darkMode: "media",
 	theme: {
 		colors: {
-			"black": "#000000",
+			"black": "#111111",
 			"white": "#ffffff",
 			"light": {
 				"0": "#042a2b",
@@ -16,12 +17,12 @@ module.exports = {
 				"100": "#fceff9"
 			},
 			"dark": {
-				"0": "#030b0d",
-				"20": "#092327",
-				"40": "#032f36",
-				"60": "#0f3b42",
-				"80": "#559741",
-				"100": "#99e0f2"
+				"0": "#0e2a22",
+				"20": "#0f2e25",
+				"40": "#184d47",
+				"60": "#035956",
+				"80": "#00917c",
+				"100": "#a5f0c5"
 			}
 		},
 		fontFamily: {
