@@ -12,78 +12,15 @@ interface ITechnologySlugs {
 }
 
 function About() {
-	const technologySlugs: ITechnologySlugs[] = [
-		{
-			id: 1,
-			slug: "php"
-		},
-		{
-			id: 2,
-			slug: "dotnet"
-		},
-		{
-			id: 3,
-			slug: "nodedotjs"
-		},
-		{
-			id: 4,
-			slug: "unity"
-		},
-		{
-			id: 5,
-			slug: "react"
-		},
-		{
-			id: 6,
-			slug: "vuedotjs"
-		},
-		{
-			id: 7,
-			slug: "github"
-		}
-	];
-
-	const languages: ILanguageGraphData[] = [
-		{
-			id: 1,
-			percentage: 75,
-			label: "C#"
-		},
-		{
-			id: 1,
-			percentage: 50,
-			label: "C++"
-		},
-		{
-			id: 1,
-			percentage: 60,
-			label: "Java"
-		},
-		{
-			id: 1,
-			percentage: 85,
-			label: "HTML"
-		},
-		{
-			id: 1,
-			percentage: 70,
-			label: "CSS"
-		},
-		{
-			id: 1,
-			percentage: 80,
-			label: "JS/TS"
-		}
-	];
+	const technologySlugs: ITechnologySlugs[] = Config.commonTechnologies;
+	const languages: ILanguageGraphData[] = Config.languages;
 
 	return (
 		<div className="w-full h-full px-8">
 			<ContentContainer flexMode>
 				<h2 className="font-medium text-3xl md:text-4xl leading-normal">Just a guy of nothing. Really.</h2>
-				<p className="text-xl 2xl:text-2xl text-light-0 leading-normal">
-					I&apos;m Jeremy Yonathan, mostly known as my usual nickname Shigeru, Kyuu, or whatever. Currently majoring in Informatics at Universitas Multimedia Nusantara.
-					<br />
-					I&apos;m highly passionate in developing and learning about technology. Most commonly in .NET (C#) including Unity and WPF, and web applications using PHP and Node.js.
+				<p className="text-xl 2xl:text-2xl text-light-0 leading-normal whitespace-pre-wrap">
+					{ Config.about.introduction }
 				</p>
 				<div className="space-y-2 2xl:space-y-4">
 					<h3 className="font-medium text-lg md:text-xl text-light-0">Commonly used technologies:</h3>
@@ -102,11 +39,11 @@ function About() {
 					<LanguageGraph data={ languages } />
 				</div>
 				<div className="space-y-2">
-					<p className="text-xl 2xl:text-2xl text-light-0 leading-normal">
-						You may contact me using the links below. Either to say hi, or just for a random chat!
+					<p className="text-xl 2xl:text-2xl text-light-0 leading-normal whitespace-pre-wrap">
+						{ Config.about.information }
 					</p>
-					<p className="2xl:text-lg text-light-0 leading-snug">
-						*Note that I&apos;m actually hard at communication though :]
+					<p className="2xl:text-lg text-light-0 leading-snug whitespace-pre-wrap">
+						{ Config.about.subtext }
 					</p>
 				</div>
 				<div className="flex justify-start w-full">
