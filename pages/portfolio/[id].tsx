@@ -48,25 +48,25 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 						<ContentContainer backHref="/portfolio" backLabel="Portfolio" flexMode>
 							<div className="space-y-2">
 								<div className="flex items-center gap-x-4 2xl:gap-x-6">
-									<h1 className="font-semibold text-3xl md:text-4xl 2xl:text-5xl text-light-0">{ project.item.name }</h1>
+									<h1 className="font-semibold text-3xl md:text-4xl 2xl:text-5xl text-light-0 dark:text-dark-100">{ project.item.name }</h1>
 									<a href={ project.item.projectLink } target="_blank" rel="noreferrer">
 										<div className="flex items-top gap-x-1 h-6 md:h-8">
-											<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 md:h-8 fill-black aspect-square" />
-											<ExternalLinkIcon className="h-3 md:h-4 stroke-light-0 aspect-square" />
+											<SVG src={ getSimpleIconLink("jsdelivr", "github") } className="h-6 md:h-8 fill-black dark:fill-white aspect-square" />
+											<ExternalLinkIcon className="h-3 md:h-4 stroke-light-0 dark:stroke-dark-100 aspect-square" />
 										</div>
 									</a>
 								</div>
-								<h2 className="font-medium text-xl 2xl:text-2xl text-light-20">{ project.item.description }</h2>
+								<h2 className="font-medium text-xl 2xl:text-2xl text-light-20 dark:text-dark-80">{ project.item.description }</h2>
 								<div className="flex gap-x-3 md:gap-x-4">
 									{
 										project.item.technologies.map(item => (
-											<SVG key={ item } src={ getSimpleIconLink("jsdelivr", item) } className="h-6 md:h-8 fill-black aspect-square" />
+											<SVG key={ item } src={ getSimpleIconLink("jsdelivr", item) } className="h-6 md:h-8 fill-black dark:fill-white aspect-square" />
 										))
 									}
 								</div>
 							</div>
 							<div className="space-y-2 md:space-y-4 2xl:space-y-8">
-								<p className="text-xl 2xl:text-2xl text-light-0 whitespace-pre-wrap">{ project.item.longDescription }</p>
+								<p className="text-xl 2xl:text-2xl text-light-0 dark:text-dark-100 whitespace-pre-wrap">{ project.item.longDescription }</p>
 								<div className="w-full overflow-x-auto">
 									<div className="flex py-2 gap-x-2 w-max">
 										{

@@ -19,21 +19,21 @@ function ContentContainer({ backHref, backLabel, flexMode, children }: IContentC
 					typeof(backHref) !== "undefined" &&
 					<div className="flex h-16">
 						<div className="flex justify-end w-0.5 h-full">
-							<div className="h-full bg-light-0" style={ { width: isHovered ? "0%" : "100%" } } />
+							<div className="h-full bg-light-0 dark:bg-dark-100" style={ { width: isHovered ? "0%" : "100%" } } />
 						</div>
 						<div className="flex min-w-50 h-full">
 							<Link href={ backHref } passHref>
-								<button type="button" onMouseOver={ () => setHovered(true) } onMouseOut={ () => setHovered(false) } className={ `flex items-center gap-x-4 px-6 py-4 ${ isHovered && "bg-light-0" }` }>
+								<button type="button" onMouseOver={ () => setHovered(true) } onMouseOut={ () => setHovered(false) } className={ `flex items-center gap-x-4 px-6 py-4 ${ isHovered && "bg-light-0 dark:bg-dark-100" }` }>
 									<div className="h-9 aspect-square">
-										<ChevronLeftIcon className={ `h-9 stroke-1 ${ !isHovered ? "stroke-light-0" : "stroke-white" } aspect-square` } />
+										<ChevronLeftIcon className={ `h-9 stroke-1 ${ !isHovered ? "stroke-light-0 dark:stroke-dark-100" : "stroke-white dark:stroke-light-0" } aspect-square` } />
 									</div>
-									<span className={ `${ !isHovered && "lg:invisible" } font-semibold text-2xl ${ isHovered && "text-white" }` }>{ typeof(backLabel) !== "undefined" ? backLabel : "Back" }</span>
+									<span className={ `${ !isHovered && "lg:invisible" } font-semibold text-2xl ${ isHovered && "text-white dark:text-dark-0" }` }>{ typeof(backLabel) !== "undefined" ? backLabel : "Back" }</span>
 								</button>
 							</Link>
 						</div>
 					</div>
 				}
-				<div className="flex-grow space-y-4 md:space-y-6 2xl:space-y-8 pl-6 2xl:pl-8 py-4 border-l-2 border-light-0">
+				<div className="flex-grow space-y-4 md:space-y-6 2xl:space-y-8 pl-6 2xl:pl-8 py-4 border-l-2 border-light-0 dark:border-dark-100">
 					{ children }
 				</div>
 			</div>

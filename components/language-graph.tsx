@@ -19,12 +19,12 @@ function LanguageGraph({ data }: ILanguageGraphProps) {
 		}
 
 		return (
-			<div className="flex flex-col gap-y-2 w-14 2xl:w-16 h-full border-b-2 border-light-0">
+			<div className="flex flex-col gap-y-2 w-14 2xl:w-16 h-full border-b-2 border-light-0 dark:border-dark-100">
 				<div className="flex flex-grow justify-center items-end">
-					<div title={ `${ heightPercentage }%` } className="w-2 2xl:w-3 bg-light-20" style={ { height: `${ heightPercentage }%` } } />
+					<div title={ `${ heightPercentage }%` } className="w-2 2xl:w-3 bg-light-20 dark:bg-dark-80" style={ { height: `${ heightPercentage }%` } } />
 				</div>
 				<div className="flex justify-center items-center w-full h-8">
-					<p className="font-medium text-lg 2xl:text-xl text-light-0">{ label }</p>
+					<p className="font-medium text-lg 2xl:text-xl text-light-0 dark:text-dark-100">{ label }</p>
 				</div>
 			</div>
 		);

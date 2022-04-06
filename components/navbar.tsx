@@ -46,17 +46,17 @@ function Navbar({ active }: INavbarProps) {
 					<div>
 						{
 							!navbarProps.isDialogOpened
-								? <MenuAlt4Icon className="lg:hidden h-6 stroke-light-0" />
-								: <XIcon className="h-6 stroke-light-0" />
+								? <MenuAlt4Icon className="lg:hidden h-6 stroke-light-0 dark:stroke-dark-100" />
+								: <XIcon className="h-6 stroke-light-0 dark:stroke-dark-100" />
 						}
 					</div>
 				</button>
 			</div>
 			{
 				(navbarProps.isDialogOpened && navbarProps.target === TargetComponent.Navbar) &&
-				<div ref={ rootDiv } className="lg:hidden fixed top-0 w-screen bg-white bg-opacity-90">
+				<div ref={ rootDiv } className="lg:hidden fixed top-0 w-screen bg-white dark:bg-black bg-opacity-90">
 					<div className="absolute bottom-0 left-0">
-						<div className="flex flex-col gap-y-6 h-56 pl-6 ml-8 border-l-2 border-light-0">
+						<div className="flex flex-col gap-y-6 h-56 pl-6 ml-8 border-l-2 border-light-0 dark:border-dark-100">
 							<NavbarLinks active={ active } onNavbarItemClick={ onNavbarItemClick } />
 						</div>
 					</div>
