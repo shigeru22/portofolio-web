@@ -43,11 +43,11 @@ function Navbar({ active }: INavbarProps) {
 		<>
 			<div className="fixed top-0 right-0 mr-8 mt-8 z-10">
 				<button type="button" onClick={ () => onNavbarItemClick(!navbarProps.isDialogOpened) }>
-					<div>
+					<div className="group hover:bg-light-0 hover:dark:bg-dark-100">
 						{
 							!navbarProps.isDialogOpened
-								? <MenuAlt4Icon className="lg:hidden h-6 stroke-light-0 dark:stroke-white" />
-								: <XIcon className="h-6 stroke-light-0 dark:stroke-white" />
+								? <MenuAlt4Icon className="lg:hidden h-6 stroke-light-0 group-hover:stroke-white dark:stroke-white group-hover:dark:stroke-dark-0" />
+								: <XIcon className="h-6 stroke-light-0 group-hover:stroke-white dark:stroke-white group-hover:dark:stroke-dark-0" />
 						}
 					</div>
 				</button>
