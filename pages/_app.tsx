@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, createContext } from "react";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import SVG from "react-inlinesvg";
+import { motion } from "framer-motion";
 import Navbar from "../components/navbar";
 import NavbarLinks from "../components/navbar-links";
 import MobileNavbar from "../components/mobile/navbar";
@@ -80,11 +81,36 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<div className="sticky lg:hidden top-0 w-full">
 					<MobileNavbar iconSrc="/kyuu.svg" />
 				</div>
-				<div className="shrink-0 hidden lg:flex flex-col justify-between w-72 h-screen px-16 pt-14">
-					<SVG src="/kyuu.svg" className="w-12 2xl:w-16 h-12 2xl:h-16 fill-black dark:fill-white" />
-					<div className="flex flex-col gap-y-6 2xl:gap-y-8 h-56 2xl:h-64 pl-6 border-l-2 border-light-0 dark:border-dark-100">
-						<NavbarLinks active={ getPath() } />
-					</div>
+				<div className="shrink-0 hidden lg:flex flex-col justify-between w-72 h-screen px-16 pt-14 overflow-y-clip">
+					<motion.div
+						animate={ { y: 0 } }
+						transition={ {
+							from: -200,
+							duration: 0.6,
+							ease: "easeOut"
+						} }>
+						<SVG src="/kyuu.svg" className="w-12 2xl:w-16 h-12 2xl:h-16 fill-black dark:fill-white" />
+					</motion.div>
+					<motion.div
+						animate={ { y: 0 } }
+						transition={ {
+							from: 256,
+							duration: 0.6,
+							ease: "easeOut"
+						} }
+						className="h-56 2xl:h-64 pl-6 border-l-2 border-light-0 dark:border-dark-100 overflow-x-clip">
+						<motion.div
+							animate={ { x: [ -160, 0 ] } }
+							transition={ {
+								from: -160,
+								duration: 0.6,
+								ease: "easeOut",
+								delay: 0.8
+							} }
+							className="flex flex-col gap-y-6 2xl:gap-y-8">
+							<NavbarLinks active={ getPath() } />
+						</motion.div>
+					</motion.div>
 				</div>
 				<div className="flex flex-col flex-grow lg:h-screen overflow-y-auto">
 					<Component { ...pageProps } />

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useContext } from "react";
 import { MenuAlt4Icon, XIcon } from "@heroicons/react/outline";
+import { motion } from "framer-motion";
 import NavbarLinks from "./navbar-links";
 import { context } from "../pages/_app";
 import { TargetComponent } from "../types/context";
@@ -41,7 +42,12 @@ function Navbar({ active }: INavbarProps) {
 
 	return (
 		<>
-			<div className="fixed top-0 right-0 mr-8 mt-8 z-10">
+			<motion.div
+				animate={ { y: 0 } }
+				transition={ {
+					from: -32, duration: 0.6, ease: "easeOut"
+				} }
+				className="fixed top-0 right-0 mr-8 mt-8 z-10">
 				<button type="button" onClick={ () => onNavbarItemClick(!navbarProps.isDialogOpened) }>
 					<div className="group hover:bg-light-0 hover:dark:bg-dark-100">
 						{
@@ -51,7 +57,7 @@ function Navbar({ active }: INavbarProps) {
 						}
 					</div>
 				</button>
-			</div>
+			</motion.div>
 			{
 				(navbarProps.isDialogOpened && navbarProps.target === TargetComponent.Navbar) &&
 				<div ref={ rootDiv } className="lg:hidden fixed top-0 w-screen bg-white dark:bg-black bg-opacity-90">
