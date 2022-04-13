@@ -74,7 +74,7 @@ function ContentContainer({ backHref, backLabel, flexMode, children }: IContentC
 						</div>
 					</Link>
 				}
-				<div className="flex-grow space-y-4 md:space-y-6 2xl:space-y-8 pl-6 2xl:pl-8 py-4 border-l-2 border-light-0 dark:border-dark-100">
+				<div className={ `flex-grow ${ flexMode ? "flex flex-col" : "" } space-y-4 md:space-y-6 2xl:space-y-8 pl-6 2xl:pl-8 py-4 border-l-2 border-light-0 dark:border-dark-100` }>
 					{ children }
 				</div>
 			</div>
