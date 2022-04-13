@@ -67,7 +67,7 @@ function ProjectItem({ id, name, description, iconSrc }: IProjectItemProps) {
 							</div>
 							<div className="flex flex-col gap-y-1 -z-10">
 								<h3 className={ `font-semibold text-left text-xl md:text-2xl ${ !isHovered ? "text-light-0 dark:text-dark-100" : "text-white dark:text-dark-0" } leading-tight md:leading-tight` }>{ name }</h3>
-								<h4 className={ `text-left md:text-lg ${ !isHovered ? "text-light-0 dark:text-dark-100" : "text-white dark:text-dark-0" } leading-tight md:leading-none` }>{ description }</h4>
+								<h4 className={ `font-medium text-left md:text-lg ${ !isHovered ? "text-light-20 dark:text-dark-100" : "text-white dark:text-dark-0" } leading-tight md:leading-none` }>{ description }</h4>
 							</div>
 						</div>
 					</button>
