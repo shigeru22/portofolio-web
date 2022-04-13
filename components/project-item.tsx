@@ -14,30 +14,30 @@ function ProjectItem({ id, name, description, iconSrc }: IProjectItemProps) {
 	const [ isHovered, setHovered ] = useState(false);
 
 	return (
-		<div onMouseEnter={ () => setHovered(true) } onMouseLeave={ () => setHovered(false) } className="flex cursor-pointer">
-			<div className="flex justify-end w-0.5 min-h-24">
-				<motion.div
-					animate={ isHovered ? "hovered" : "default" }
-					variants={ {
-						hovered: {
-							width: "0%",
-							transition: {
-								duration: 0.15,
-								ease: "easeOut"
+		<Link href={ `/portfolio/${ id }` } passHref>
+			<div onMouseEnter={ () => setHovered(true) } onMouseLeave={ () => setHovered(false) } className="flex cursor-pointer">
+				<div className="flex justify-end w-0.5 min-h-24">
+					<motion.div
+						animate={ isHovered ? "hovered" : "default" }
+						variants={ {
+							hovered: {
+								width: "0%",
+								transition: {
+									duration: 0.15,
+									ease: "easeOut"
+								}
+							},
+							default: {
+								width: "100%",
+								transition: {
+									duration: 0.15,
+									ease: "easeOut"
+								}
 							}
-						},
-						default: {
-							width: "100%",
-							transition: {
-								duration: 0.15,
-								ease: "easeOut"
-							}
-						}
-					} }
-					className="bg-light-0 dark:bg-dark-100" />
-			</div>
-			<div className="flex w-full min-h-24">
-				<Link href={ `/portfolio/${ id }` } passHref>
+						} }
+						className="bg-light-0 dark:bg-dark-100" />
+				</div>
+				<div className="flex w-full min-h-24">
 					<button type="button" className="relative w-full h-full -z-20">
 						<div className="absolute top-0 left-0 w-full h-full -z-30">
 							<motion.div
@@ -70,9 +70,9 @@ function ProjectItem({ id, name, description, iconSrc }: IProjectItemProps) {
 							</div>
 						</div>
 					</button>
-				</Link>
+				</div>
 			</div>
-		</div>
+		</Link>
 	);
 }
 
