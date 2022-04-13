@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { GetStaticPropsContext, InferGetServerSidePropsType } from "next";
 import Link from "next/link";
+import { Deta } from "deta";
 import axios from "axios";
 import SVG from "react-inlinesvg";
 import { EmojiSadIcon, ExternalLinkIcon } from "@heroicons/react/outline";
@@ -13,6 +14,8 @@ import { getSimpleIconLink } from "../../utils/simple-icons";
 import { context } from "../_app";
 import { IProjectItemKeyData } from "../../types/project-item";
 import { TargetComponent } from "../../types/context";
+import { IProjectItemDetailData } from "../../types/api/projects";
+import { ValueError } from "../../types/error";
 
 function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeof getStaticProps>) {
 	/* TODO: implement null (not found) project */
@@ -119,29 +122,31 @@ function PortfolioDetails({ status, project }: InferGetServerSidePropsType<typeo
 }
 
 async function getStaticPaths() {
-	try {
-		const response = await axios.get(`${ process.env.API_HOST }/projects`);
-		const data = response.data.data as IProjectItemKeyData[];
+	/* the API routes aren't available during build, thus query database directly */
 
-		const paths = data.map(item => ({
-			params: { id: item.key.toString() }
-		}));
-
-		return {
-			paths,
-			fallback: true
-		};
+	if(typeof(process.env.DETA_PROJECT_KEY) === "undefined" || process.env.DETA_PROJECT_KEY === "") {
+		throw new ValueError("DETA_PROJECT_KEY is not yet assigned.");
 	}
-	catch (e) {
-		/* TODO: handle Axios related errors */
 
-		if(e instanceof Error) {
-			throw e;
-		}
-		else {
-			throw Error("Unknown error occurred while fetching data.");
-		}
-	}
+	const deta = Deta(process.env.PROJECT_KEY);
+	const db = deta.Base("portfolio-items");
+
+	const fetchResult = (await db.fetch()).items as unknown as IProjectItemDetailData[];
+	fetchResult.sort((a, b) => {
+		const dateA: Date = typeof(a.dateAdded) === "string" ? new Date(a.dateAdded) : a.dateAdded;
+		const dateB: Date = typeof(b.dateAdded) === "string" ? new Date(b.dateAdded) : b.dateAdded;
+
+		return dateA.getTime() - dateB.getTime();
+	});
+
+	const paths = fetchResult.map(item => ({
+		params: { id: item.key.toString() }
+	}));
+
+	return {
+		paths,
+		fallback: true
+	};
 }
 
 async function getStaticProps(context: GetStaticPropsContext) {
