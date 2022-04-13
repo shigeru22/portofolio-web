@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { context } from "../pages/_app";
 import { TargetComponent } from "../types/context";
@@ -52,10 +53,26 @@ function ScreenshotModal({ src, alt, description, currentIndex, maxIndex, onArro
 	}
 
 	return (
-		<>
+		<AnimatePresence>
 			{
 				(navbarProps.isDialogOpened && navbarProps.target === TargetComponent.Screenshot) &&
-				<div ref={ rootDiv } className="fixed top-0 left-0 w-screen bg-white dark:bg-black bg-opacity-90">
+				<motion.div
+					ref={ rootDiv }
+					key="navModal"
+					initial="hidden"
+					animate="visible"
+					exit="hidden"
+					variants={ {
+						hidden: {
+							opacity: 0,
+							transition: { duration: 0.15 }
+						},
+						visible: {
+							opacity: 1,
+							transition: { duration: 0.25 }
+						}
+					} }
+					className="fixed top-0 left-0 w-screen bg-white dark:bg-black bg-opacity-90">
 					<div className="absolute h-1/2 bottom-0 left-0 -z-10">
 						<div className="flex flex-col gap-y-6 h-full px-6 ml-8 md:ml-36 2xl:ml-56 border-l-2 border-light-0 dark:border-dark-100" />
 					</div>
@@ -85,9 +102,9 @@ function ScreenshotModal({ src, alt, description, currentIndex, maxIndex, onArro
 							</div>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			}
-		</>
+		</AnimatePresence>
 	);
 }
 
