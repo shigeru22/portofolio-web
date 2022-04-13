@@ -32,7 +32,7 @@ async function getStaticProps() {
 					status: response.status,
 					projects: [] as IProjectItemKeyData[]
 				},
-				revalidate: 43200
+				revalidate: 86400
 			};
 		}
 
@@ -43,7 +43,7 @@ async function getStaticProps() {
 				status: HTTPStatus.OK,
 				projects: data
 			},
-			revalidate: 43200
+			revalidate: 1296000
 		};
 	}
 	catch (e) {

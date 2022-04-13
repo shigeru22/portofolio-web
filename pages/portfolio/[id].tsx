@@ -155,7 +155,7 @@ async function getStaticProps(context: GetStaticPropsContext) {
 				status: HTTPStatus.OK,
 				project: data
 			},
-			revalidate: 43200
+			revalidate: 1296000
 		};
 	}
 	catch (e) {
@@ -165,7 +165,7 @@ async function getStaticProps(context: GetStaticPropsContext) {
 					status: e.response !== undefined ? e.response.status : 500,
 					project: null
 				},
-				revalidate: 43200
+				revalidate: 86400
 			};
 		}
 		else if(e instanceof Error) {
