@@ -46,7 +46,7 @@ function About() {
 						{ Config.about.subtext }
 					</p>
 				</div>
-				<div className="flex justify-start w-full">
+				<div className="flex justify-center lg:justify-start w-full">
 					<div className="flex flex-col gap-y-2">
 						{
 							Config.links.map(link => (
