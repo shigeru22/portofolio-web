@@ -65,7 +65,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 		}
 
 		const data: IMessageData = {
-			message: "Data insertion failed."
+			message: "Data retrieval failed."
 		};
 
 		res.status(HTTPStatus.INTERNAL_SERVER_ERROR).json(data);

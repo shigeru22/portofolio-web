@@ -1,0 +1,92 @@
+{
+	"name": "Jeremy Yonathan",
+  "occupation": "Developer",
+  "img": {
+    "link": "https://safebooru.org/index.php?page=post&s=view&id=1612415",
+    "creator": "peko"
+  },
+  "links": [
+    {
+      "name": "Twitter",
+      "iconSlug": "twitter",
+      "link": "https://twitter.com/shigeru_22"
+    },
+    {
+      "name": "LinkedIn",
+      "iconSlug": "linkedin",
+      "link": "https://www.linkedin.com/in/jeremy-yonathan"
+    },
+    {
+      "name": "GitHub",
+      "iconSlug": "github",
+      "link": "https://github.com/shigeru22"
+    }
+  ],
+  "about": {
+    "introduction": "I'm Jeremy Yonathan, mostly known as my usual nickname Shigeru, Kyuu, or whatever. Currently majoring in Informatics at Universitas Multimedia Nusantara.\nI'm highly passionate in developing and learning about technology. Most commonly in .NET (C#) including Unity and WPF, and web applications using PHP and Node.js.",
+    "information": "You may contact me using the links below. Either to say hi, or just for a random chat!",
+    "subtext": "*Note that I'm actually hard at communication though :]"
+  },
+  "commonTechnologies": [
+		{
+			"id": 1,
+			"slug": "php"
+		},
+		{
+			"id": 2,
+			"slug": "dotnet"
+		},
+		{
+			"id": 3,
+			"slug": "nodedotjs"
+		},
+		{
+			"id": 4,
+			"slug": "unity"
+		},
+		{
+			"id": 5,
+			"slug": "react"
+		},
+		{
+			"id": 6,
+			"slug": "vuedotjs"
+		},
+		{
+			"id": 7,
+			"slug": "github"
+		}
+	],
+  "languages": [
+		{
+			"id": 1,
+			"percentage": 75,
+			"label": "C#"
+		},
+		{
+			"id": 2,
+			"percentage": 50,
+			"label": "C++"
+		},
+		{
+			"id": 3,
+			"percentage": 60,
+			"label": "Java"
+		},
+		{
+			"id": 4,
+			"percentage": 85,
+			"label": "HTML"
+		},
+		{
+			"id": 5,
+			"percentage": 70,
+			"label": "CSS"
+		},
+		{
+			"id": 6,
+			"percentage": 80,
+			"label": "JS/TS"
+		}
+	]
+}
