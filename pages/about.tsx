@@ -58,7 +58,7 @@ function About() {
 					</div>
 				</div>
 				<div className="flex justify-center w-full py-8">
-					<SVG src="/kyuu.svg" className="h-12 fill-light-20 dark:fill-dark-80 aspect-square" />
+					<SVG src="/kyuu.svg" className="h-12 fill-light-20 dark:fill-dark-80 aspect-square opacity-50" />
 				</div>
 			</ContentContainer>
 		</div>
