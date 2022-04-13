@@ -44,6 +44,7 @@ function ContentContainer({ backHref, backLabel, flexMode, children }: IContentC
 							<div className="relative flex min-w-50 h-full">
 								<div className="absolute top-0 left-0 w-full h-full -z-20">
 									<motion.div
+										initial="default"
 										animate={ isHovered ? "hovered" : "default" }
 										variants={ {
 											hovered: {

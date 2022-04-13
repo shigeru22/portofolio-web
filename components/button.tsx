@@ -39,6 +39,7 @@ function Button({ iconSlug, iconSource, label, onClick }: IButtonProps) {
 			<div className="relative flex min-w-50 h-16">
 				<div className="absolute top-0 left-0 w-full h-full -z-20">
 					<motion.div
+						initial="default"
 						animate={ isHovered ? "hovered" : "default" }
 						variants={ {
 							hovered: {

@@ -41,6 +41,7 @@ function ProjectItem({ id, name, description, iconSrc }: IProjectItemProps) {
 					<button type="button" className="relative w-full h-full -z-20">
 						<div className="absolute top-0 left-0 w-full h-full -z-30">
 							<motion.div
+								initial="default"
 								animate={ isHovered ? "hovered" : "default" }
 								variants={ {
 									hovered: {
