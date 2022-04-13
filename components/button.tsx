@@ -63,7 +63,7 @@ function Button({ iconSlug, iconSource, label, onClick }: IButtonProps) {
 					<div className="h-9 aspect-square">
 						<SVG src={ typeof(iconSource) === "undefined" || iconSource === "simpleicon" ? getSimpleIconLink("jsdelivr", iconSlug) : iconSlug } className={ `w-9 h-9 ${ isHovered ? "fill-white dark:fill-black" : "fill-black dark:fill-white" }` } />
 					</div>
-					<span className={ `${ !isHovered && "lg:invisible" } font-semibold text-2xl ${ isHovered && "text-white dark:text-dark-0" }` }>{ label }</span>
+					<span className={ `font-semibold text-2xl ${ isHovered && "text-white dark:text-dark-0" }` }>{ label }</span>
 				</button>
 			</div>
 		</div>
